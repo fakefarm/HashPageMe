@@ -1,0 +1,21 @@
+<%= form_for(@fetcher) do |f| %>
+  <% if @fetcher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fetcher.errors.count, "error") %> prohibited this fetcher from being saved:</h2>
+
+      <ul>
+      <% @fetcher.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

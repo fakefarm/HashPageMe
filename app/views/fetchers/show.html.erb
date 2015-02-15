@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @tweets.count %> tweets!</h1>
+<p> <%= @latest %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @fetcher.username %>
+</p>
+
+
+<%= link_to 'Edit', edit_fetcher_path(@fetcher) %> |
+<%= link_to 'Back', fetchers_path %>

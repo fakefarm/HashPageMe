@@ -2,30 +2,22 @@ class FetchersController < ApplicationController
   before_action :set_fetcher, only: [:show, :edit, :update, :destroy]
   helper_method :get_tweets
 
-  # GET /fetchers
-  # GET /fetchers.json
   def index
     @fetchers = Fetcher.all
   end
 
-  # GET /fetchers/1
-  # GET /fetchers/1.json
   def show
     @tweets = $client.get_all_tweets(@fetcher.username)
     @latest = @tweets.first.text
   end
 
-  # GET /fetchers/new
   def new
     @fetcher = Fetcher.new
   end
 
-  # GET /fetchers/1/edit
   def edit
   end
 
-  # POST /fetchers
-  # POST /fetchers.json
 
   def collect_with_max_id(collection=[], max_id=nil, &block)
     response = yield(max_id)
@@ -59,8 +51,6 @@ class FetchersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /fetchers/1
-  # PATCH/PUT /fetchers/1.json
   def update
     respond_to do |format|
       if @fetcher.update(fetcher_params)
@@ -73,8 +63,6 @@ class FetchersController < ApplicationController
     end
   end
 
-  # DELETE /fetchers/1
-  # DELETE /fetchers/1.json
   def destroy
     @fetcher.destroy
     respond_to do |format|
@@ -84,12 +72,10 @@ class FetchersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_fetcher
       @fetcher = Fetcher.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def fetcher_params
       params.require(:fetcher).permit(:username)
     end

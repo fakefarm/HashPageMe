@@ -12,7 +12,6 @@
     <% @fetchers.each do |fetcher| %>
       <tr>
         <td><%= fetcher.username %></td>
-        <td><%= get_tweets(fetcher.username).count %> tweets</td>
         <td><%= link_to 'Show', fetcher %></td>
         <td><%= link_to 'Edit', edit_fetcher_path(fetcher) %></td>
         <td><%= link_to 'Destroy', fetcher, method: :delete, data: { confirm: 'Are you sure?' } %></td>

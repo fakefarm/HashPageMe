@@ -1,13 +1,15 @@
 class FetchersController < ApplicationController
   before_action :set_fetcher, only: [:show, :edit, :update, :destroy]
   helper_method :get_tweets
+  include TwitterUtilities
 
   def index
     @fetchers = Fetcher.all
   end
 
   def show
-    @tweets = $client.get_all_tweets(@fetcher.username)
+    @tweets = TwitterClientWrapper.client
+    # @tweets = TWITTER_CLIENT.get_all_tweets(@fetcher.username)
     @latest = @tweets.first.text
   end
 
@@ -16,25 +18,6 @@ class FetchersController < ApplicationController
   end
 
   def edit
-  end
-
-
-  def collect_with_max_id(collection=[], max_id=nil, &block)
-    response = yield(max_id)
-    collection += response
-    response.empty? ? collection.flatten : collect_with_max_id(collection, response.last.id - 1, &block)
-  end
-
-  def get_tweets(user)
-    $client.get_all_tweets(user)
-  end
-
-  def $client.get_all_tweets(user)
-    collect_with_max_id do |max_id|
-      options = {count: 200, include_rts: true}
-      options[:max_id] = max_id unless max_id.nil?
-      user_timeline(user, options)
-    end
   end
 
   def create

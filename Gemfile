@@ -4,6 +4,10 @@ gem 'pry'
 gem 'twitter'
 gem 'figaro'
 
+# TODO
+# hashPage versioning...
+# gem 'paper_trail', '~> 4.0.0.beta'
+
 gem 'rails', '4.1.6'
 gem 'sqlite3', group: :development
 
@@ -23,4 +27,9 @@ group :production do
   gem 'rails_12factor'
 end
 
-
+group :test do
+  gem 'vcr'
+  gem 'shoulda' # matchers and context as meta gem
+  gem 'mocha' # stubs for unit tests
+  # gem 'webmock'
+end

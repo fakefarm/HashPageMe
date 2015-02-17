@@ -62,9 +62,12 @@ GEM
       mime-types (>= 1.16, < 3)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
+    metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (2.4.3)
     minitest (5.5.1)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     naught (1.0.0)
@@ -108,6 +111,12 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    shoulda (3.5.0)
+      shoulda-context (~> 1.0, >= 1.0.1)
+      shoulda-matchers (>= 1.4.1, < 3.0)
+    shoulda-context (1.2.1)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
     simple_oauth (0.3.1)
     slop (3.6.0)
     spring (1.3.2)
@@ -142,6 +151,7 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    vcr (2.9.3)
 
 PLATFORMS
   ruby
@@ -151,14 +161,17 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  mocha
   pg
   pry
   rails (= 4.1.6)
   rails_12factor
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  shoulda
   spring
   sqlite3
   turbolinks
   twitter
   uglifier (>= 1.3.0)
+  vcr

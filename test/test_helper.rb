@@ -12,3 +12,4 @@ end
 require "minitest/unit"
 require "mocha/mini_test"
 require 'mocha/mini_test'
+require 'capybara/rails'

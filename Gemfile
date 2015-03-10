@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'pry'
 gem 'twitter'
 gem 'figaro'
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
 
 # TODO
 # hashPage versioning...
@@ -32,4 +35,6 @@ group :test do
   gem 'shoulda' # matchers and context as meta gem
   gem 'mocha' # stubs for unit tests
   # gem 'webmock'
+  gem 'capybara'
+  gem 'capybara-webkit'
 end

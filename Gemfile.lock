@@ -47,6 +47,9 @@ GEM
     capybara-webkit (1.4.1)
       capybara (>= 2.3.0, < 2.5.0)
       json
+    capybara_minitest_spec (1.0.5)
+      capybara (>= 2)
+      minitest (>= 4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -185,6 +188,7 @@ DEPENDENCIES
   bourbon
   capybara
   capybara-webkit
+  capybara_minitest_spec
   coffee-rails (~> 4.0.0)
   figaro
   jbuilder (~> 2.0)

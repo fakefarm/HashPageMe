@@ -37,4 +37,5 @@ group :test do
   # gem 'webmock'
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'capybara_minitest_spec'
 end

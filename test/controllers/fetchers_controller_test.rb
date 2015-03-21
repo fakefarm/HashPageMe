@@ -16,6 +16,8 @@ class FetchersControllerTest < ActionController::TestCase
 
     context "action" do
       should 'has a title' do
+        get :index
+        binding.pry
         page.should_have?('foo')
       end
     end

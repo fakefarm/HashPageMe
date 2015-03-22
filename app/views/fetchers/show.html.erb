@@ -2,7 +2,10 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1><%= @fetcher.username %> has <%= @tweets.count %> tweets!</h1>
+<h1>
+  <%= @fetcher.username %> has <%= @tweets.count %> tweets!</h1>
+  <!-- _dw TODO create a greeting presenter -->
+  <!-- <%#= greeting(@fetcher) %> has <%#= @tweets.count %> tweets!</h1> -->
 <p> <%= @latest %></p>
 
 <%= link_to 'Edit', edit_fetcher_path(@fetcher) %> |

@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'pry'
 gem 'twitter'
 gem 'figaro'
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
 
 # TODO
 # hashPage versioning...
@@ -27,9 +30,13 @@ group :production do
   gem 'rails_12factor'
 end
 
+
 group :test do
-  gem 'vcr'
-  gem 'shoulda' # matchers and context as meta gem
-  gem 'mocha' # stubs for unit tests
-  # gem 'webmock'
+  # gem 'vcr'                     # do I need this?
+  # gem 'webmock'                 # do I need this?
+  gem 'minitest-rails-capybara' # Installs gems: minitest, minitest-rails, minitest-capybara, capybara
+  gem 'shoulda'                 # matchers and context as meta gem
+  gem 'mocha'                   # stubs for unit tests
+  gem 'capybara-webkit'         # question - is this necessary still?
+  gem 'capybara_minitest_spec'  # question - is this necessary still?
 end

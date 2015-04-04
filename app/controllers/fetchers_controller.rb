@@ -8,8 +8,7 @@ class FetchersController < ApplicationController
   end
 
   def show
-    @tweets = TwitterClientWrapper.client.get_all_tweets(@fetcher.username)
-    # @tweets = TWITTER_CLIENT.get_all_tweets(@fetcher.username)
+    @tweets = TwitterClientWrapper.new.client.get_all_tweets(@fetcher.username)
     @latest = @tweets.first.text
   end
 

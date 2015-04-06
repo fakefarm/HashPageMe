@@ -1,8 +1,3 @@
-# _dw TODO
-# add this to rake path
-# be ruby test/services/fetcher_presenter_test.rb
-# make test pass
-
 require 'test_helper'
 
 class FetcherPresenterTest < ActiveSupport::TestCase

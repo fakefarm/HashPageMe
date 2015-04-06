@@ -11,7 +11,7 @@ class FetcherPresenter
   end
 
   def show_90_day_data
-    tweets.map { |t| t.created_at > 3.month.ago }
+    tweets.select { |t| t.created_at > 3.month.ago }
   end
 end
 

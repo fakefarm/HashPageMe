@@ -12,7 +12,7 @@ class FetcherPresenterTest < ActiveSupport::TestCase
     should "return 90 day data" do
       p = FetcherPresenter.new([old_tweet, new_tweet])
       assert_equal p.show_90_day_data.first.id, new_tweet.id
-      assert_new_equal p.show_90_day_data.last.id, old_tweet.id
+      assert_not_equal p.show_90_day_data.last.id, old_tweet.id
     end
   end
 
@@ -23,15 +23,11 @@ private
   end
 
   def new_tweet
-    Twitter::Tweet.any_instance.stubs(:created_at).returns("2015-02-10 14:44:24")
-    t = Twitter::Tweet.new(id: 1)
-    t.save
+    Twitter::Tweet.new(id: 1, created_at: "2015-02-10 14:44:24")
   end
 
   def old_tweet
-    Twitter::Tweet.any_instance.stubs(:created_at).returns("2014-09-10 14:44:24")
-    t = Twitter::Tweet.new(id: 2)
-    t.save
+    Twitter::Tweet.new(id: 2, created_at: "2014-09-10 14:44:24")
   end
 end
 

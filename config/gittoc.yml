@@ -1,0 +1,18 @@
+sections:
+  -
+    title: 'Learning Ruby'
+    summary: 'I had wanted to learn more about specific methods'
+    tags:
+      - map
+  -
+    title: 'Setting up Capybara'
+    summary: 'I want to get do end to end testing'
+    tags:
+      - capybara
+
+ignore:
+  words:
+    - merge
+    - fix
+    - typo
+

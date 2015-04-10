@@ -6,7 +6,7 @@ namespace :git do
     toc['sections'].each do |s|
       puts s['title']
       puts s['summary']
-      system("git log --grep '#{s['tags'][0]}' --no-merges --oneline --reverse")
+      system("#{git_command(s)}")
       puts ''
     end
   end
@@ -17,14 +17,17 @@ namespace :git do
       toc['sections'].each do |s|
           f.write "## #{s['title']} \n\n"
           f.write "#{s['summary']} \n\n"
-          commits = `git log --grep '#{s['tags'][0]}' --no-merges --oneline --reverse`
+          commits = `#{git_command(s)}`
           commits.split("\n").each do |c|
             sha = c[0..6]
             f.write "[#{c[8..-1]}](https://github.com/woodall/HashPageMe/commit/#{sha})\n\n"
           end
-          f.write "\n"
         end
     end
-    puts 'Table of Contents has been wrote.'
+    puts 'Table of Contents have been wrote'
   end
+end
+
+def git_command(section)
+  "git log --grep '#{section['tags'][0]}' --no-merges --oneline --reverse"
 end

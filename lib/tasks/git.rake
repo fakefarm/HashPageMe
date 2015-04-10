@@ -25,5 +25,6 @@ namespace :git do
           f.write "\n"
         end
     end
+    puts 'Table of Contents has been wrote.'
   end
 end

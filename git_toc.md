@@ -34,5 +34,5 @@ Rake is a great tool and I've wanted to get better at it.
 
 [publish new git:toc and add msg to rake task](https://github.com/woodall/HashPageMe/commit/86fae02)
 
-[Create rake helper method](https://github.com/woodall/HashPageMe/commit/4e511c7)
+[Create rake helper method](https://github.com/woodall/HashPageMe/commit/37389f7)
 

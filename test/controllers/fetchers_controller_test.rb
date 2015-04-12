@@ -22,7 +22,7 @@ class FetchersControllerTest < ActionController::TestCase
   end
 
   test "should show fetcher" do
-    Twitter::REST::Client.any_instance.expects(:get_all_tweets).returns([Twitter::Tweet.new(:id => 1, :body => "some viral tweet")])
+    TwitterClientWrapper.any_instance.expects(:get_all_tweets).returns([Twitter::Tweet.new(:id => 1, :body => "some viral tweet")])
     get :show, id: @fetcher
     assert_response :success
   end

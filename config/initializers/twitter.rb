@@ -2,7 +2,7 @@ class TwitterClientWrapper
   attr_reader :client
 
   def initialize
-    @client = make_client
+    @client = create_client
   end
 
   def get_all_tweets(user)
@@ -11,7 +11,7 @@ class TwitterClientWrapper
 
 private
   # basic connections
-  def make_client
+  def create_client
     Twitter::REST::Client.new do |config|
       config.consumer_key        = Figaro.env.twitter_consumer_key
       config.consumer_secret     = Figaro.env.twitter_consumer_secret

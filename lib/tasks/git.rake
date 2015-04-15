@@ -1,5 +1,5 @@
 require 'yaml'
-toc = YAML.load_file("config/gittoc.yml")
+toc = YAML.load_file("gittoc.yml")
 
 namespace :git do
   task :toc do
@@ -20,8 +20,7 @@ namespace :git do
           commits = `#{git_command(s)}`
           commits.split("\n").each do |c|
             sha = c[0..6]
-            # TODO - what is the git command for finding user's repo?
-            f.write "[#{c[8..-1]}](https://github.com/woodall/HashPageMe/commit/#{sha})\n\n"
+            f.write "[#{c[8..-1]}](https://github.com/#{github_repo_name}/commit/#{sha})\n\n"
           end
         end
     end
@@ -33,14 +32,24 @@ def git_command(section)
   "git log --grep '#{section['tags'][0]}' --no-merges --oneline --reverse"
 end
 
+def github_repo_name
+  `git remote -v`.
+  split("\n").
+  map { |row| row.split("\t")[1]}.
+  map{ |g| /github.com\:([a-zA-Z]*\/[a-zA-Z]*)\.git/.match(g) }.
+  compact.
+  map{|g| g[1]}.
+  uniq[0]
+end
+
 # NOTES
 
 ## Git
 # what are log formatting options?
 # - show first 200 words of a commit
 # - the date
-# How do I get their remote repo name
 # How do I exclude commits from output?
+# How do I get more than single tag?
 # How do I prevent duplicate entries?
 
 ## Ruby / Rake

@@ -4,6 +4,9 @@ sections:
     summary: 'I want to learn more about specific methods'
     tags:
       - map
+      - rake
+      - methods
+      -
   -
     title: 'Setting up Capybara'
     summary: 'I want to get do end to end testing'

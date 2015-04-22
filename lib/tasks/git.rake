@@ -11,13 +11,13 @@ namespace :git do
     end
   end
 
-  task :publish do
+  task :publish => [:toc] do
     File.open("git_toc.md", 'w') do |f|
       f.write "# git:toc \n\n"
       toc['sections'].each do |s|
           f.write "## #{s['title']} \n\n"
           f.write "#{s['summary']} \n\n"
-          commits = `#{git_command(s)}`
+          commits = `#{extract_commits_for_tags(s)}`
           commits.split("\n").each do |c|
             sha = c[0..6]
             f.write "[#{c[8..-1]}](https://github.com/#{github_repo_name}/commit/#{sha})\n\n"
@@ -28,9 +28,34 @@ namespace :git do
   end
 end
 
-def git_command(section)
+
+def extract_commits_for_tags(section)
   "git log --grep '#{section['tags'][0]}' --no-merges --oneline --reverse"
+  # NOTES
+  # separate data structure and api commands
+  # section['tags'][0] needs to be specific, but we need it more flexible.
+  # - only need to be string don't couple to a specific data stucture
+  # - currently is not reusable
+  # - the goal is to use this same method in different environments and with different inputs
+
+  # Keep things modular and separate
+  # - API what does the work
+  # - Data Type (How data is ultimately needed - string, integer, etc.)
+  # - Data Structure (There will be data in a specific way that is not necessarily what is needed.)
+
 end
+
+# RAKE TASK SUMMARY
+# we should be able to run code in various ways including rake tasks, irb, console, or cron job.
+# rakes job - manage dependencies and provide command line variables
+# if we have a rake task, it should call our code quickly.
+
+
+
+# HOMEWORK
+# abstract rake guts to Ruby classes
+# abstract gittoc to gem
+
 
 def github_repo_name
   `git remote -v`.
@@ -43,6 +68,10 @@ def github_repo_name
 end
 
 # NOTES
+# Meeting with Tom about Android and realize that there are;
+# - Always end points
+# - Always a need to coerce data
+
 
 ## Git
 # what are log formatting options?
@@ -50,10 +79,11 @@ end
 # - the date
 # How do I exclude commits from output?
 # How do I get more than single tag?
-# How do I prevent duplicate entries?
 
 ## Ruby / Rake
 # What's the best way to create options? .yml file?
 
 ## Gem
 # What does it take to make this a gem?
+
+

@@ -12,6 +12,7 @@ class FetchersController < ApplicationController
     @profile_pic = client.client.user(@fetcher.username).profile_image_uri.to_s
     tweets = client.get_all_tweets(@fetcher.username)
     @retweets = RetweetCounterPresenter.new(tweets).list
+    @trends = RetweetCounterPresenter.new(tweets).hashes
   end
 
   def new

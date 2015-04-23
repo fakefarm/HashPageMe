@@ -7,6 +7,15 @@ class RetweetCounterPresenter
   end
 
   def list
-    tweets.select { |tweet| tweet.retweet_count > 1 }
+    tweets.select do |tweet|
+      tweet.retweet_count > 0 && tweet.retweeted_tweet? == false
+    end
+  end
+
+  def hashes
+    raw = tweets.select do |tweet|
+      tweet.hashtags? == true && tweet.retweeted_tweet? == false
+    end
+    raw.map { |tweet| tweet.hashtags }.flatten.map { |tag| tag.attrs[:text].downcase }.uniq
   end
 end

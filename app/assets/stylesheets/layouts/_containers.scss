@@ -1,0 +1,15 @@
+.l-container {
+  @include outer-container;
+}
+
+.l-sidebar {
+  @include media($medium-screen) {
+    @include span-columns(2);
+  }
+}
+
+.l-content {
+  @include media($medium-screen) {
+    @include span-columns(10);
+  }
+}

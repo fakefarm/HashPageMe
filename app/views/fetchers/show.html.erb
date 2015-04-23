@@ -8,15 +8,15 @@
         <%= image_tag @profile_pic %>
       </div>
       <div class="handle">
-        <%= @fetcher.username %>
+        <%= link_to @fetcher.username, "http://www.twitter.com/#{@fetcher.username}" %>
       </div>
     </div>
     <div class="trends">
       <h2>trends</h2>
       <ul>
-        <li>#bam</li>
-        <li>#foo</li>
-        <li>#bar</li>
+      <% @trends.each do |trend| %>
+        <li><%= link_to trend, "https://twitter.com/search?q=%23#{trend}%20from%3A#{@fetcher.username}&src=typd&vertical=default&f=tweets", target: '_blank' %></li>
+      <% end %>
       </ul>
     </div>
   </section>
@@ -25,10 +25,13 @@
       <a href="#" class="tab-link">retweeted by others</a>
       <div class="tab-content">
         <section>
-          <% @retweets.each do |tweet| %>
-            <div class='tweet'>
-              <p><%= tweet.text %></p>
-            </div>
+          <!-- _dw TODO - make a retweets partial -->
+          <% if @retweets.count > 0 %>
+            <% @retweets.each do |tweet| %>
+            <%= render partial: 'partials/tweet', locals: {tweet: tweet} %>
+            <% end %>
+          <% else %>
+            <p>Hmm.. doesn't look like anyone has retweeted any of <%= @fetcher.username %>'s tweets.</p>
           <% end %>
         </section>
       </div>

@@ -4,6 +4,7 @@ require 'rails/test_help'
 require 'minitest/rails'
 require 'minitest/rails/capybara'
 require 'minitest/pride'
+require 'vcr_helper'
 
 class ActiveSupport::TestCase
     ActiveRecord::Migration.check_pending!

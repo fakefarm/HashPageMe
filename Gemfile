@@ -19,7 +19,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -32,7 +31,7 @@ end
 
 
 group :test do
-  # gem 'vcr'                     # do I need this?
+  gem 'vcr'
   # gem 'webmock'                 # do I need this?
   gem 'minitest-rails-capybara' # Installs gems: minitest, minitest-rails, minitest-capybara, capybara
   gem 'shoulda'                 # matchers and context as meta gem

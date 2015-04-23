@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>HashPage</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p>by <a href="<%= app_path %>">wwwoodall</a></p>
+  <p>by <a href="<%= app_path %>">wwwoodall</a> | new <a href="<%= root_path %>">hashPage</a> | all <a href="<%= fetchers_path %>">hashPages</a></p>
   <%= yield %>
 </body>
 </html>

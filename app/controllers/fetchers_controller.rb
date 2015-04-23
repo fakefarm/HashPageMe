@@ -8,8 +8,10 @@ class FetchersController < ApplicationController
   end
 
   def show
-    @tweets = TwitterClientWrapper.new.get_all_tweets(@fetcher.username)
-    @latest = @tweets.first.text
+    client = TwitterClientWrapper.new
+    @profile_pic = client.client.user(@fetcher.username).profile_image_uri.to_s
+    tweets = client.get_all_tweets(@fetcher.username)
+    @retweets = RetweetCounterPresenter.new(tweets).list
   end
 
   def new

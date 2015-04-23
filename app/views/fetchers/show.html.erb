@@ -1,12 +1,41 @@
 <%# TODO add a loading button %>
 <p id="notice"><%= notice %></p>
 
-
-<h1>
-  <%= @fetcher.username %> has <%= @tweets.count %> tweets!</h1>
+<h1><%= @fetcher.username %> has <%= @tweets.count %> tweets!</h1>
   <!-- _dw TODO create a greeting presenter -->
   <!-- <%#= greeting(@fetcher) %> has <%#= @tweets.count %> tweets!</h1> -->
 <p> <%= @latest %></p>
-
-<%= link_to 'Edit', edit_fetcher_path(@fetcher) %> |
-<%= link_to 'Back', fetchers_path %>
+<section class='side-bar'>
+  <div class="bio">
+    <div class="profile-pic"></div>
+    <div class="handle"></div>
+  </div>
+  <div class="trends">
+    <h2>trends</h2>
+    <ul>
+      <li>#bam</li>
+      <li>#foo</li>
+      <li>#bar</li>
+    </ul>
+  </div>
+</section>
+<ul class="accordion-tabs-minimal">
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link is-active">favorited by others</a>
+    <div class="tab-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt pellentesque lorem, id suscipit dolor rutrum id. Morbi facilisis porta volutpat. Fusce adipiscing, mauris quis congue tincidunt, sapien purus suscipit odio, quis dictum odio tortor in sem. Ut sit amet libero nec orci mattis fringilla. Praesent eu ipsum in sapien tincidunt molestie sed ut magna. Nam accumsan dui at orci rhoncus pharetra tincidunt elit ullamcorper. Sed ac mauris ipsum. Nullam imperdiet sapien id purus pretium id aliquam mi ullamcorper.</p>
+    </div>
+  </li>
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link">retweeted by others</a>
+    <div class="tab-content">
+      <p>Ut laoreet augue et neque pretium non sagittis nibh pulvinar. Etiam ornare tincidunt orci quis ultrices. Pellentesque ac sapien ac purus gravida ullamcorper. Duis rhoncus sodales lacus, vitae adipiscing tellus pharetra sed. Praesent bibendum lacus quis metus condimentum ac accumsan orci vulputate. Aenean fringilla massa vitae metus facilisis congue. Morbi placerat eros ac sapien semper pulvinar. Vestibulum facilisis, ligula a molestie venenatis, metus justo ullamcorper ipsum, congue aliquet dolor tortor eu neque. Sed imperdiet, nibh ut vestibulum tempor, nibh dui volutpat lacus, vel gravida magna justo sit amet quam. Quisque tincidunt ligula at nisl imperdiet sagittis. Morbi rutrum tempor arcu, non ultrices sem semper a. Aliquam quis sem mi.</p>
+    </div>
+  </li>
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link">30 day stats</a>
+    <div class="tab-content">
+      <p>Donec mattis mauris gravida metus laoreet non rutrum sem viverra. Aenean nibh libero, viverra vel vestibulum in, porttitor ut sapien. Phasellus tempor lorem id justo ornare tincidunt. Nulla faucibus, purus eu placerat fermentum, velit mi iaculis nunc, bibendum tincidunt ipsum justo eu mauris. Nulla facilisi. Vestibulum vel lectus ac purus tempus suscipit nec sit amet eros. Nullam fringilla, enim eu lobortis dapibus, quam magna tincidunt nibh, sit amet imperdiet dolor justo congue turpis.</p>
+    </div>
+  </li>
+</ul>

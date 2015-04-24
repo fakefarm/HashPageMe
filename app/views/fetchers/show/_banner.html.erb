@@ -1,11 +1,17 @@
-<div class='banner'>
-  <div class="image">
-    <%= image_tag 'http://pbs.twimg.com/media/B9xs-vFCAAAeFNJ.jpg' %>
-    <div class='username'>
-      <%= @fetcher.username %>
+<% if @banner_text.nil? %>
+  <!-- _dw TODO put somthing about tweet with a #b to get a  -->
+  <h1>Doah, tweet something and add a #b to it. Like so, </h1>
+  <blockquote class="twitter-tweet" lang="en"><p>What if your tweets could create a webpage about you? <a href="https://twitter.com/hashtag/b?src=hash">#b</a></p>&mdash; HashPageMe (@HashPageMe) <a href="https://twitter.com/HashPageMe/status/591638710841516032">April 24, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<% else %>
+  <div class='banner'>
+    <div class="image">
+      <%= image_tag @banner_image %>
+      <div class='username'>
+        <%= @fetcher.username %>
+      </div>
+    </div>
+    <div class="text">
+      <%= @banner_text %>
     </div>
   </div>
-  <div class="text">
-    Son, this is excite bike. http://t.co/4exlXLY1WLY
-  </div>
-</div>
+<% end %>

@@ -1,0 +1,27 @@
+.footer {
+  @include row();
+  @include clearfix();
+  background: #eee;
+
+  .text {
+    padding: 0.5em;
+    font-size: 1em;
+
+    @include media($medium-screen) {
+      @include span-columns(5);
+      padding-top: 15%;
+      text-align: center;
+      font-size: 2em;
+    }
+  }
+
+  .image {
+    @include media($medium-screen) {
+      @include span-columns(7);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

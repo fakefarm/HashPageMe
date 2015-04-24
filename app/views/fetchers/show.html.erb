@@ -1,46 +1,11 @@
 <%# TODO add a loading button %>
 <p id="notice"><%= notice %></p>
 <!-- _dw TODO create a greeting presenter -->
-<div class="l-container">
-  <section class='side-bar l-sidebar'>
-    <div class="bio">
-      <div class="profile-pic">
-        <%= image_tag @profile_pic %>
-      </div>
-      <div class="handle">
-        <%= link_to @fetcher.username, "http://www.twitter.com/#{@fetcher.username}" %>
-      </div>
-    </div>
-    <div class="trends">
-      <h2>trends</h2>
-      <ul>
-      <% @trends.each do |trend| %>
-        <li><%= link_to trend, "https://twitter.com/search?q=%23#{trend}%20from%3A#{@fetcher.username}&src=typd&vertical=default&f=tweets", target: '_blank' %></li>
-      <% end %>
-      </ul>
-    </div>
-  </section>
-  <ul class="accordion-tabs-minimal l-content">
-    <li class="tab-header-and-content is-active">
-      <a href="#" class="tab-link">retweeted by others</a>
-      <div class="tab-content">
-        <section>
-          <!-- _dw TODO - make a retweets partial -->
-          <% if @retweets.count > 0 %>
-            <% @retweets.each do |tweet| %>
-            <%= render partial: 'partials/tweet', locals: {tweet: tweet} %>
-            <% end %>
-          <% else %>
-            <p>Hmm.. doesn't look like anyone has retweeted any of <%= @fetcher.username %>'s tweets.</p>
-          <% end %>
-        </section>
-      </div>
-    </li>
-    <li class="tab-header-and-content">
-      <a href="#" class="tab-link">favorited by others</a>
-      <div class="tab-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt pellentesque lorem, id suscipit dolor rutrum id. Morbi facilisis porta volutpat. Fusce adipiscing, mauris quis congue tincidunt, sapien purus suscipit odio, quis dictum odio tortor in sem. Ut sit amet libero nec orci mattis fringilla. Praesent eu ipsum in sapien tincidunt molestie sed ut magna. Nam accumsan dui at orci rhoncus pharetra tincidunt elit ullamcorper. Sed ac mauris ipsum. Nullam imperdiet sapien id purus pretium id aliquam mi ullamcorper.</p>
-      </div>
-    </li>
-  </ul>
+<div class="">
+  <%= render partial: 'fetchers/show/banner' %>
+  <div class="l-hash-wrapper">
+    <%= render partial: 'fetchers/show/sidebar' %>
+    <%= render partial: 'fetchers/show/content' %>
+  </div>
+  <%= render partial: 'fetchers/show/footer' %>
 </div>

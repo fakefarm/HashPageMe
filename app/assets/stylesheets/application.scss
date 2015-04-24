@@ -1,6 +1,9 @@
 @import "bourbon";
 @import "neat";
 @import "base/base";
-@import "fetchers";
+@import "modules/banner";
+@import "modules/sidebar";
+@import "modules/content";
+@import "modules/footer";
 
 @import 'layouts/containers'

@@ -1,5 +1,6 @@
 .l-container {
   @include outer-container;
+
 }
 
 .l-sidebar {
@@ -10,6 +11,11 @@
 
 .l-content {
   @include media($medium-screen) {
-    @include span-columns(10);
+    @include span-columns(9);
   }
+}
+
+.l-hash-wrapper {
+  @include clearfix;
+  background: #FF6666; // _dw move to a real spot to manage style, not layout
 }

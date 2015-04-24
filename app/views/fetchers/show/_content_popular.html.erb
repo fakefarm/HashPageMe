@@ -1,0 +1,9 @@
+<section class='content-container'>
+  <% if @retweets.count > 0 %>
+    <% @retweets.each do |tweet| %>
+      <%= render partial: 'partials/tweet', locals: {tweet: tweet} %>
+    <% end %>
+  <% else %>
+    <p>Hmm.. doesn't look like anyone has retweeted any of <%= @fetcher.username %>'s tweets.</p>
+  <% end %>
+</section>

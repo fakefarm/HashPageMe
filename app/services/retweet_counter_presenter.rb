@@ -12,6 +12,7 @@ class RetweetCounterPresenter
     end
   end
 
+  # _dw todo - move this to HashTagsPresenter
   def hashes
     raw = tweets.select do |tweet|
       tweet.hashtags? == true && tweet.retweeted_tweet? == false

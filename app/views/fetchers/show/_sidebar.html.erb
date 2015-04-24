@@ -1,0 +1,13 @@
+  <section class='side-bar l-sidebar'>
+    <div class="popular">
+      <%= link_to 'popular' %>
+    </div>
+    <hr>
+    <div class="trends">
+      <ul>
+      <% @trends.each do |trend| %>
+        <li><%= link_to trend, "https://twitter.com/search?q=%23#{trend}%20from%3A#{@fetcher.username}&src=typd&vertical=default&f=tweets", target: '_blank' %></li>
+      <% end %>
+      </ul>
+    </div>
+  </section>

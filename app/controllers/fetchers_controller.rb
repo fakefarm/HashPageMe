@@ -8,12 +8,14 @@ class FetchersController < ApplicationController
   end
 
   def show
-    # _dw Code Review
     client = TwitterClientWrapper.new
     @profile_pic = client.client.user(@fetcher.username).profile_image_uri.to_s
     tweets = client.get_all_tweets(@fetcher.username)
-    @banner_text  = BannerPresenter.new(tweets).banner_text
-    @banner_image = BannerPresenter.new(tweets).banner_image
+
+    # _dw Code Review
+    @banner  = BannerPresenter.new(tweets).banner
+    @banner_image  = BannerPresenter.new(tweets).image
+    @banner_text  = BannerPresenter.new(tweets).text
   end
 
   def new

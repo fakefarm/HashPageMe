@@ -1,9 +1,10 @@
-<% if @banner_text.nil? %>
+<% if @banner.nil? %>
   <!-- _dw TODO put somthing about tweet with a #b to get a  -->
   <h1>Doah, tweet something and add a #b to it. Like so, </h1>
   <blockquote class="twitter-tweet" lang="en"><p>What if your tweets could create a webpage about you? <a href="https://twitter.com/hashtag/b?src=hash">#b</a></p>&mdash; HashPageMe (@HashPageMe) <a href="https://twitter.com/HashPageMe/status/591638710841516032">April 24, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <% else %>
   <div class='banner'>
+    <% unless @banner_image.nil? %>
     <div class="image">
       <%= image_tag @banner_image %>
       <div class='username'>
@@ -13,5 +14,10 @@
     <div class="text">
       <%= @banner_text %>
     </div>
+    <% else %>
+    <div class="text-banner">
+      <%= @banner_text %>
+    </div>
+    <% end %>
   </div>
 <% end %>

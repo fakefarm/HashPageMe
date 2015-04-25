@@ -22,8 +22,10 @@ class FetchersControllerTest < ActionController::TestCase
   end
 
   test "should show fetcher" do
-    TwitterClientWrapper.any_instance.expects(:get_all_tweets).returns([Twitter::Tweet.new(:id => 1, :body => "some viral tweet")])
-    get :show, id: @fetcher
+    # TwitterClientWrapper.any_instance.expects(:get_all_tweets).returns([Twitter::Tweet.new(:id => 1, :body => "some viral tweet")])
+    # Not sure how to test a show page.
+    # _dw HOW DO I TEST THIS?
+    get :show, id: 1
     assert_response :success
   end
 

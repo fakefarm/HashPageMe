@@ -35,4 +35,14 @@
       font-size: 2em;
     }
   }
+
+  .text-banner {
+    padding: 1em;
+    font-size: 2em;
+    text-align: center;
+    @include media($medium-screen) {
+      padding: 3em;
+      font-size: 3em;
+    }
+  }
 }

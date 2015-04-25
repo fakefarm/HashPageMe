@@ -1,27 +1,16 @@
 # HashPage
 
-A learning project. [See Notes](https://github.com/woodall/HashPageMe/search?utf8=%E2%9C%93&q=%23+Notes)
 
-## Goals
+Create a website with your hashtags
 
-- Learn mocking, stubbing, and faking.
-- Learn vcr, web mock, minitest and capybara.
-- Develop in a BDD cycle
-- Improve my understanding of Ruby & Rails
+A new beneift to using twitter is that your content can be converted to a webpage that you manage. 
 
-# Table of contents
 
-## Learning Ruby
-I had wanted to learn more about specific methods
+## Summary 
+Hashpage can be thought of 3 different things;
 
-07b9657 The difference between #map and #select
+- It's like an about.me account, but more dynamic.
+- All content is tweets you've organized by hashtags
+- use hashtags to trend yourself rather than trends on twitter
+- using twitter as a CMS to build a site
 
-## Setting up Capybara
-
-I want to get do end to end testing
-
-1fdb874 Trying to get Capybara’s #page method, but not successful
-
-35969a0 Add minitest & capybara via minitest-rails-capybara
-
-0b040c2 Capybara works, yay!

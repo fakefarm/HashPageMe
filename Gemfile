@@ -31,6 +31,7 @@ end
 
 
 group :test do
+  gem 'simplecov', :require => false, :group => :test
   gem 'vcr'
   # gem 'webmock'                 # do I need this?
   gem 'minitest-rails-capybara' # Installs gems: minitest, minitest-rails, minitest-capybara, capybara

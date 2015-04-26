@@ -1,15 +1,16 @@
 <section class='hero'>
   <nav>
     <ul>
-      <li><a href="" title="examples">examples</a></li>
+      <li><a href="" title="examples">example</a></li>
       <li><a href="" title="how to">how to</a></li>
-      <li><a href="" title="themes">themes</a></li>
+      <!-- <li><a href="" title="themes">themes</a></li> -->
     </ul>
   </nav>
   <div class="text">
-    <h2>Your tweets as a webpage</h2>
-    <p>Use Twitter as a Content Management Platform</p>
-    <small>It's like about.me but with current information</small>
+    <%= image_tag 'logo_white.png' %>
+    <h2>Styled tweets</h2>
+    <p>Your tweets sound good.</p>
+    <p>A hashPage makes them look good.</p>
   </div>
 </section>
 <section class='form'>
@@ -17,26 +18,30 @@
     <%= render 'form' %>
   </div>
 </section>
+<section class='tweet-example row'>
+  <div class="copy big">
+    <h3>Trend Yourself</h3>
+    <p>Use hashtags to add tweets to your hashpage.</p>
+    <ul>
+      <li>The Banner</li>
+      <li>Use a <b>#b</b> hashtag to add tweet to the banner</li>
+    </ul>
+  </div>
+  <div class="image small">
+    <blockquote class="twitter-tweet" lang="en"><p>My hair is a bit out of control. <a href="https://twitter.com/hashtag/b?src=hash">#b</a> <a href="http://t.co/az0c1Qo8wW">pic.twitter.com/az0c1Qo8wW</a></p>&mdash; dave woodall (@wwwoodall) <a href="https://twitter.com/wwwoodall/status/592084427657752576">April 25, 2015</a></blockquote>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</section>
 <section class='site-example row'>
   <div class="image big">
     <%= image_tag 'page_ex.jpg' %>
   </div>
   <div class="copy small">
-    <h3>Your tweets in a new format</h3>
-    <p>Create and manage a webpage with tweets</p>
-  </div>
-</section>
-<section class='tweet-example row'>
-  <div class="copy big">
     <h3>Twitter as a CMS</h3>
-    <p>Create and manage a webpage with tweets</p>
-  </div>
-  <div class="image small">
-    <blockquote class="twitter-tweet" lang="en"><p>working on the hash parser now <a href="https://twitter.com/hashtag/h?src=hash">#h</a> <a href="https://twitter.com/hashtag/building?src=hash">#building</a></p>&mdash; HashPageMe (@HashPageMe) <a href="https://twitter.com/HashPageMe/status/591822041902264320">April 25, 2015</a></blockquote>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <p>hashPage uses Twitter as a Content Management Platform. Create and manage a webpage with tweets.</p>
   </div>
 </section>
-<section class='manual row'>
+<!-- <section class='manual row'>
   <div class='title'>
     <h2>User Manual</h2>
     <p>How to manage your hashPage </p>
@@ -59,8 +64,8 @@
         <%= image_tag 'page_ex.jpg' %>
       </div>
     </div>
-
-    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading is-active" rel="tab1">Update your Footer</a>
+ -->
+<!--     <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading is-active" rel="tab1">Update your Footer</a>
     <div id="tab5" class="js-vertical-tab-content vertical-tab-content">
       <h1>#f is for footer</h1>
       <p>A footer is the bottom area. To add a footer tweet, simply add the <b>#g</b> hashtag to a tweet.</p>
@@ -107,6 +112,6 @@
         <li>#blue - blue</li>
         <li>#red - red</li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </div>

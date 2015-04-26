@@ -2,12 +2,28 @@
 
 h1,
 h2,
+h3,
 p {
   font-family: 'Lato';
 }
 
 h1 { font-weight: 900 }
-p { font-weight: 300 }
+
+h3 {
+  font-weight: 700;
+  font-size: 1.8em;
+  @include media($medium-screen) {
+    font-size: 4em;
+  }
+}
+
+p {
+  font-weight: 300;
+  font-size: 1.2em;
+  @include media($medium-screen) {
+    font-size: 1.8em;
+  }
+}
 
 body {
   padding: 0;
@@ -32,10 +48,31 @@ body {
   }
 
   .text {
-    font-size: 2.5em;
     color: white;
     text-align: center;
-    p { margin: 0; padding: 0;}
+    img {
+      width: 20%;
+      @include media($medium-screen) {
+        width: 7%;
+      }
+    }
+
+    h2 {
+      font-size: 2.75em;
+
+      @include media($medium-screen) {
+        font-size: 5em;
+      }
+    }
+
+    p {
+      margin: 0; padding: 0;
+      font-size: 1.8em;
+
+      @include media($medium-screen) {
+         font-size: 2.5em;
+      }
+    }
   }
 }
 
@@ -48,23 +85,31 @@ body {
 
   width: 100%;
   .form-contents {
-    margin-left: 20%;
+    @include media($medium-screen) {
+      margin-left: 20%;
+    }
    }
   input[type='text'] {
-    float: left;
-    width: 15em;
-    margin-right: 1em;
-    padding: 0.8em;
-    font-size: 2em;
     font-family: 'Lato';
+    @include media($medium-screen) {
+      float: left;
+      width: 15em;
+      margin-right: 1em;
+      padding: 0.8em;
+      font-size: 2em;
+    }
   }
 
   input[type="submit"] {
-    -webkit-font-smoothing: antialiased;
-    font-size: 3em;
-    padding: 0.45em 2em;
-    background: #8722EC;
     font-family: 'Lato';
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    @include media($medium-screen) {
+      width: 30%;
+      font-size: 3em;
+      padding: 0.45em 2em;
+      background: #8722EC;
+    }
     &:hover {
       background: #691CB7;
     }
@@ -77,16 +122,22 @@ body {
 }
 
 .big {
-  @include span-columns(7);
+  @include media($medium-screen) {
+    @include span-columns(7);
+  }
 }
 .small {
-  @include span-columns(5);
+  @include media($medium-screen) {
+    @include span-columns(5);
+  }
 }
 
 .manual {
   .title {
-    font-size: 3em;
-    padding: 2em 2em 0;
     text-align: center;
+    @include media($medium-screen) {
+      font-size: 3em;
+      padding: 2em 2em 0;
+    }
   }
 }

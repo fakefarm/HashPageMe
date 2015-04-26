@@ -1,53 +1,112 @@
-<%= image_tag 'logo.gif' %>
-<h1>Make a webpage from hashtags</h1>
-<%= render 'form' %>
-
-<!-- _dw style instructions -->
-<!-- <section class='instructions'>
-  <div class="layout">
-    <h2>Layout sections</h2>
-    <div class="example-tweet">
-    </div>
+<section class='hero'>
+  <nav>
     <ul>
-      <li>#b is for banner</li>
-      <li>#p is for picture</li>
-      <li>#f is for footer</li>
+      <li><a href="" title="examples">examples</a></li>
+      <li><a href="" title="how to">how to</a></li>
+      <li><a href="" title="themes">themes</a></li>
     </ul>
-  </div>
-  <div class="content">
-    <h2>Adding Content</h2>
-    <div class="example-tweet">
-    </div>
-    <h3>#h + #subject</h3>
-    <p>Add an #h and whatever subject you want to categorize them with.</p>
-  </div>
-  <div class="fonts">
-    <h2>Fonts</h2>
-    <div class="example-tweet">
-    </div>
-    <h3>Pick your font</h3>
-    <p>Font options include:</p>
-    <ul>
-      <li>#serif</li>
-      <li>#sanserif</li>
-      <li>#block</li>
-      <li>#script</li>
-      <li>#fun</li>
-    </ul>
-  </div>
-  <div class="colors">
-    <h2>Colors</h2>
-    <div class="example-tweet">
-    </div>
-    <p>If you have one color, it will be background. If you have 2, the second is for fonts</p>
-    <h3>Hex as Hash</h3>
-    <p>Hex values are a type of color code.</p>
-    <h3>Examples</h3>
-    <ul>
-      <li>#eee - gray</li>
-      <li>#blue - blue</li>
-      <li>#red - red</li>
-    </ul>
+  </nav>
+  <div class="text">
+    <h2>Your tweets as a webpage</h2>
+    <p>Use Twitter as a Content Management Platform</p>
+    <small>It's like about.me but with current information</small>
   </div>
 </section>
- -->
+<section class='form'>
+  <div class="form-contents">
+    <%= render 'form' %>
+  </div>
+</section>
+<section class='site-example row'>
+  <div class="image big">
+    <%= image_tag 'page_ex.jpg' %>
+  </div>
+  <div class="copy small">
+    <h3>Your tweets in a new format</h3>
+    <p>Create and manage a webpage with tweets</p>
+  </div>
+</section>
+<section class='tweet-example row'>
+  <div class="copy big">
+    <h3>Twitter as a CMS</h3>
+    <p>Create and manage a webpage with tweets</p>
+  </div>
+  <div class="image small">
+    <blockquote class="twitter-tweet" lang="en"><p>working on the hash parser now <a href="https://twitter.com/hashtag/h?src=hash">#h</a> <a href="https://twitter.com/hashtag/building?src=hash">#building</a></p>&mdash; HashPageMe (@HashPageMe) <a href="https://twitter.com/HashPageMe/status/591822041902264320">April 25, 2015</a></blockquote>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</section>
+<section class='manual row'>
+  <div class='title'>
+    <h2>User Manual</h2>
+    <p>How to manage your hashPage </p>
+  </div>
+  <div class="vertical-tabs-container">
+  <div class="vertical-tabs">
+    <a href="javascript:void(0)" class="js-vertical-tab vertical-tab is-active" rel="tab1">Update your Banner</a>
+    <a href="javascript:void(0)" class="js-vertical-tab vertical-tab is-active" rel="tab5">Update your Footer</a>
+    <a href="javascript:void(0)" class="js-vertical-tab vertical-tab" rel="tab2">Add Content</a>
+    <a href="javascript:void(0)" class="js-vertical-tab vertical-tab" rel="tab3">Change Fonts</a>
+    <a href="javascript:void(0)" class="js-vertical-tab vertical-tab" rel="tab4">Change Colors</a>
+  </div>
+
+  <div class="vertical-tab-content-container">
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading is-active" rel="tab1">Update your Banner</a>
+    <div id="tab1" class="js-vertical-tab-content vertical-tab-content">
+      <h1>#b is for banner</h1>
+      <p>A banner is the top area. To add a banner tweet, simply add the <b>#b</b> hashtag to a tweet.</p>
+      <div class="image">
+        <%= image_tag 'page_ex.jpg' %>
+      </div>
+    </div>
+
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading is-active" rel="tab1">Update your Footer</a>
+    <div id="tab5" class="js-vertical-tab-content vertical-tab-content">
+      <h1>#f is for footer</h1>
+      <p>A footer is the bottom area. To add a footer tweet, simply add the <b>#g</b> hashtag to a tweet.</p>
+      <div class="image">
+        <%= image_tag 'page_ex.jpg' %>
+      </div>
+    </div>
+
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading" rel="tab2">Add Content</a>
+    <div id="tab2" class="js-vertical-tab-content vertical-tab-content">
+    <h1>#h + #subject</h1>
+    <p>A banner is the top area. To add a banner tweet, simply add the <b>#b</b> hashtag to a tweet.</p>
+    <div class="image">
+      <%= image_tag 'page_ex.jpg' %>
+    </div>
+    <p>Add an #h and whatever subject you want to categorize them with.</p>
+    </div>
+
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading" rel="tab3">Change Fonts</a>
+    <div id="tab3" class="js-vertical-tab-content vertical-tab-content">
+      <h1>Change fonts with a hashtag!</h1>
+      <p>A banner is the top area. To add a banner tweet, simply add the <b>#b</b> hashtag to a tweet.</p>
+      <div class="image">
+        <%= image_tag 'page_ex.jpg' %>
+      </div>
+      <ul>
+        <li>#serif</li>
+        <li>#sanserif</li>
+        <li>#block</li>
+        <li>#script</li>
+        <li>#fun</li>
+      </ul>
+    </div>
+
+    <a href="" class="js-vertical-tab-accordion-heading vertical-tab-accordion-heading" rel="tab4">Change Colors</a>
+    <div id="tab4" class="js-vertical-tab-content vertical-tab-content">
+      <h1>Colors</h1>
+      <p>A banner is the top area. To add a banner tweet, simply add the <b>#b</b> hashtag to a tweet.</p>
+      <div class="image">
+        <%= image_tag 'page_ex.jpg' %>
+      </div>
+      <ul>
+        <li>#eee - gray</li>
+        <li>#blue - blue</li>
+        <li>#red - red</li>
+      </ul>
+    </div>
+  </div>
+</div>

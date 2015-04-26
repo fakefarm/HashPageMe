@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+h1,
+h2,
+p {
+  font-family: 'Lato';
+}
+
+h1 { font-weight: 900 }
+p { font-weight: 300 }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'lato', sans-serif;
+}
+
+.hero {
+  background-image: -webkit-linear-gradient(135deg,  #8722EC, #00DBDB);
+  background-image: linear-gradient(to bottom,#8722EC, #00DBDB);
+  padding-bottom: 5em;
+
+  nav {
+    padding: 1em 1em 4em 0;
+    ul { text-align: right;}
+    li { display: inline-block; }
+    a {
+      color: white;
+      margin: 0 1em;
+    }
+
+  }
+
+  .text {
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    p { margin: 0; padding: 0;}
+  }
+}
+
+.form {
+  border-top: 2px solid #7F7F7F;
+  padding: 3em;
+  overflow: auto;
+  background-image: -webkit-linear-gradient(90deg,  #CCCCCC, #eee);
+  background-image: linear-gradient(to bottom,#999999, #00DBDB);
+
+  width: 100%;
+  .form-contents {
+    margin-left: 20%;
+   }
+  input[type='text'] {
+    float: left;
+    width: 15em;
+    margin-right: 1em;
+    padding: 0.8em;
+    font-size: 2em;
+    font-family: 'Lato';
+  }
+
+  input[type="submit"] {
+    -webkit-font-smoothing: antialiased;
+    font-size: 3em;
+    padding: 0.45em 2em;
+    background: #8722EC;
+    font-family: 'Lato';
+    &:hover {
+      background: #691CB7;
+    }
+  }
+}
+
+.row {
+  @include row;
+  padding: 3em;
+}
+
+.big {
+  @include span-columns(7);
+}
+.small {
+  @include span-columns(5);
+}
+
+.manual {
+  .title {
+    font-size: 3em;
+    padding: 2em 2em 0;
+    text-align: center;
+  }
+}

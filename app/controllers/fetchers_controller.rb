@@ -11,8 +11,7 @@ class FetchersController < ApplicationController
     # _dw TODO - make params create a new fetcher.
 
     client = TwitterClientWrapper.new
-    @profile_pic = client.client.user(@fetcher.username).profile_image_uri.to_s
-    tweets = client.get_all_tweets(@fetcher.username)
+    tweets = client.get_all_tweets(params[:id])
 
     # _dw Code Review
     @banner  = BannerPresenter.new(tweets).banner

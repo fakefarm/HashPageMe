@@ -1,25 +1,19 @@
-<h1>All Hashpages</h1>
+<h1>Hashpages</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @fetchers.each do |fetcher| %>
+<div class="l-container">
+  <table>
+    <thead>
       <tr>
-        <td><%= fetcher.username %></td>
-        <td><%= link_to 'Show', fetcher %></td>
-        <td><%= link_to 'Edit', edit_fetcher_path(fetcher) %></td>
-        <td><%= link_to 'Destroy', fetcher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Hash Page', new_fetcher_path %>
+    <tbody>
+      <% @fetchers.each do |fetcher| %>
+        <tr>
+          <td><%= link_to "#{fetcher.username}", "/#{fetcher.username}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'fetchers#new'
   get ':id', to: 'fetchers#show'
-  get 'fetchers', to: 'fetchers#index'
+  get 'pages/all', to: 'fetchers#index'
   resource :fetchers, except: [:show]
 
 

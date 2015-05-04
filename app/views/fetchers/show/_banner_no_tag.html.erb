@@ -1,13 +1,43 @@
-  <!-- _dw TODO put somthing about tweet with a #b to get a  -->
-
-  <h1><%= link_to "##{params[:id]}", "http://www.twitter.com/#{params[:id]}", target: '_blank' %>,</h1>
-  <h2>Welcome to your hashPage!</h2>
-  <p>Add a <span class='b'>#b</span> to a tweet. Like so... </p>
-  <div class="example-banner-tweet">
-    A smooth sea never made a skilled mariner. <span class='b'>#b</span>
+  <div class="l-container no-tweets">
+    <h1><%= link_to "##{params[:id]}", "http://www.twitter.com/#{params[:id]}", target: '_blank' %>,</h1>
+    <h2>Welcome to your hashPage!</h2>
+    <p>Start by adding a <span class='b'>#b</span> to a tweet. Like so... </p>
+    <div class="example-banner-tweet">
+      A smooth sea never made a skilled mariner. <span class='b'>#b</span>
+    </div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-text="A smooth sea never made a skilled mariner #b" data-size="
+    large" data-count="none">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <p>(Then, just refresh this page.)</p>
+    <p>Pro tip: tweet an image with a <span class='b'>#b</span> for a photo on your banner.</p>
   </div>
-  <a href="https://twitter.com/share" class="twitter-share-button" data-text="A smooth sea never made a skilled mariner #b" data-size="
-  large" data-count="none">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <p>(Then, just refresh this page.)</p>
-  <p>Pro tip: tweet an image with a <span class='b'>#b</span> for a photo on your banner.</p>
+
+<section class='about-hp'>
+  <div class="pitch">
+    <h3>What's a hashPage?</h3>
+    <p>A hashPage makes your tweets look good.</p>
+  </div>
+  <section class='tweet-example row'>
+    <div class="copy big">
+      <h2>Trend Yourself</h2>
+      <p>Use hashtags to add tweets to your hashpage.</p>
+      <ul>
+        <li>The Banner</li>
+        <li>Use a <b>#b</b> hashtag to add tweet to the banner</li>
+      </ul>
+    </div>
+    <div class="image small">
+      <blockquote class="twitter-tweet" lang="en"><p>My hair is a bit out of control. <a href="https://twitter.com/hashtag/b?src=hash">#b</a> <a href="http://t.co/az0c1Qo8wW">pic.twitter.com/az0c1Qo8wW</a></p>&mdash; dave woodall (@wwwoodall) <a href="https://twitter.com/wwwoodall/status/592084427657752576">April 25, 2015</a></blockquote>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </section>
+  <section class='site-example row'>
+    <div class="image big">
+      <%= image_tag 'page_ex.jpg' %>
+    </div>
+    <div class="copy small">
+      <h2>Twitter as a CMS</h2>
+      <p>hashPage uses Twitter as a Content Management Platform. Create and manage a webpage with tweets.</p>
+    </div>
+  </section>
+</section>

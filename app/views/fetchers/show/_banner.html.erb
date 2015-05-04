@@ -1,14 +1,12 @@
 <% if @banner.nil? %>
-  <div class="l-container no-tweets">
     <%= render partial: 'fetchers/show/banner_no_tag' %>
-  </div>
 <% else %>
   <div class='banner'>
     <% unless @banner_image.nil? %>
     <div class="image">
       <%= image_tag @banner_image %>
       <div class='username'>
-        <%= @fetcher.username %>
+        <%= params[:id] %>
       </div>
     </div>
     <div class="text">

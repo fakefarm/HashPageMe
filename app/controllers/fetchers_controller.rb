@@ -8,6 +8,8 @@ class FetchersController < ApplicationController
   end
 
   def show
+    # _dw TODO - make params create a new fetcher.
+
     client = TwitterClientWrapper.new
     @profile_pic = client.client.user(@fetcher.username).profile_image_uri.to_s
     tweets = client.get_all_tweets(@fetcher.username)
@@ -27,10 +29,11 @@ class FetchersController < ApplicationController
 
   def create
     @fetcher = Fetcher.new(fetcher_params)
+    @fetcher.slug = fetcher_params['username']
 
     respond_to do |format|
       if @fetcher.save
-        format.html { redirect_to @fetcher, notice: 'Fetcher was successfully created.' }
+        format.html { redirect_to "/#{@fetcher.slug}", notice: 'Fetcher was successfully created.' }
         format.json { render :show, status: :created, location: @fetcher }
       else
         format.html { render :new }
@@ -61,10 +64,10 @@ class FetchersController < ApplicationController
 
   private
     def set_fetcher
-      @fetcher = Fetcher.find(params[:id])
+      @fetcher = Fetcher.find_by_slug(params[:id])
     end
 
     def fetcher_params
-      params.require(:fetcher).permit(:username)
+      params.require(:fetcher).permit(:username, :slug)
     end
 end

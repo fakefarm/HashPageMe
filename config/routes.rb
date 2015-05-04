@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :fetchers
   root 'fetchers#new'
+  get ':id', to: 'fetchers#show'
+  get 'fetchers', to: 'fetchers#index'
+  resource :fetchers, except: [:show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

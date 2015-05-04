@@ -1,0 +1,13 @@
+  <!-- _dw TODO put somthing about tweet with a #b to get a  -->
+
+  <h1><%= link_to "##{params[:id]}", "http://www.twitter.com/#{params[:id]}", target: '_blank' %>,</h1>
+  <h2>Welcome to your hashPage!</h2>
+  <p>Add a <span class='b'>#b</span> to a tweet. Like so... </p>
+  <div class="example-banner-tweet">
+    A smooth sea never made a skilled mariner. <span class='b'>#b</span>
+  </div>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-text="A smooth sea never made a skilled mariner #b" data-size="
+  large" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <p>(Then, just refresh this page.)</p>
+  <p>Pro tip: tweet an image with a <span class='b'>#b</span> for a photo on your banner.</p>

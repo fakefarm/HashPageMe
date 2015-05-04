@@ -50,10 +50,46 @@
 .no-tweets {
   margin-top: 3em;
   padding: 3em;
+  color: #666666;
   border: 1px solid #DADADA;
   background: #F8F8F8;
   border-radius: 5px;
-  h1 { margin: 0 0 1em 0; }
-  h2 { margin: 1em 0 0 0; }
+  h1 {
+      font-size: 1.5em;
+    font-weight: 400;
+    .sub-hero {
+      font-weight: 300;
+      font-size: 0.75em;
+    }
+  }
+  h2 {
+    font-size: 1em;
+    margin: 1em 0;
+    @include media($medium-screen) {
+      margin: 0;
+      font-size: 3em;
+    }
+  }
   .b { color: #FF4D1D; }
+
+  .example-banner-tweet {
+    padding: 1em;
+    border: 1px solid #eee;
+    background: white;
+    border-radius: 5px;
+    color: #004080;
+    font-style: italic;
+    margin-bottom: 1em;
+    @include media($medium-screen) {
+      margin: 1em;
+      font-size: 1.7em;
+    }
+  }
+  p {
+    font-size: 1em;
+    @include media($medium-screen) {
+      font-size: 1.5em;
+    }
+  }
 }
+

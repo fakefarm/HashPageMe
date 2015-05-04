@@ -1,7 +1,12 @@
 <% if @banner.nil? %>
+  <div class="l-container no-tweets">
   <!-- _dw TODO put somthing about tweet with a #b to get a  -->
-  <h1>Doah, tweet something and add a #b to it. Like so, </h1>
-  <blockquote class="twitter-tweet" lang="en"><p>What if your tweets could create a webpage about you? <a href="https://twitter.com/hashtag/b?src=hash">#b</a></p>&mdash; HashPageMe (@HashPageMe) <a href="https://twitter.com/HashPageMe/status/591638710841516032">April 24, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <h1>Doah, You need to add a <span class='b'>#b</span> to a tweet. Like so... </h1>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-text="A smooth sea never made a skilled mariner #b" data-size="large" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <h2>(Then, just refresh this page.)</h2>
+  <p>Pro tip: tweet an image with a <span class='b'>#b</span> for a photo on your banner.</p>
+  </div>
 <% else %>
   <div class='banner'>
     <% unless @banner_image.nil? %>

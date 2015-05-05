@@ -3,18 +3,24 @@
 <% else %>
   <div class='banner'>
     <% unless @banner_image.nil? %>
-    <div class="image">
+    <div class="image animated fadeIn">
       <%= image_tag @banner_image %>
       <div class='username'>
-        <%= params[:id] %>
+        <p>
+          <%= params[:id] %>
+        </p>
       </div>
     </div>
-    <div class="text">
-      <%= @banner_text %>
+    <div class="text animated short-delay fadeInDown">
+      <p>
+        <%= @banner_text %>
+      </p>
     </div>
     <% else %>
-    <div class="text-banner">
-      <%= @banner_text %>
+    <div class="text-banner animated short-delay fadeIn">
+      <p>
+        <%= @banner_text %>
+      </p>
     </div>
     <% end %>
   </div>

@@ -1,43 +1,86 @@
+<div class="promo animated modal-delay fadeIn">
   <div class="l-container no-tweets">
     <h1><%= link_to "##{params[:id]}", "http://www.twitter.com/#{params[:id]}", target: '_blank' %>,</h1>
     <h2>Welcome to your hashPage!</h2>
     <p>Start by adding a <span class='b'>#b</span> to a tweet. Like so... </p>
     <div class="example-banner-tweet">
       A smooth sea never made a skilled mariner. <span class='b'>#b</span>
+
     </div>
     <a href="https://twitter.com/share" class="twitter-share-button" data-text="A smooth sea never made a skilled mariner #b" data-size="
     large" data-count="none">Tweet</a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     <p>(Then, just refresh this page.)</p>
     <p>Pro tip: tweet an image with a <span class='b'>#b</span> for a photo on your banner.</p>
-  </div>
+    <hr>
+    <section class='about-hp'>
+      <div class="pitch">
+        <h4>What's a hashPage?</h4>
+        <p>A hashPage makes your tweets look good.</p>
+      </div>
+      <section class='tweet-example row'>
+        <div class="copy big">
+          <h2>Trend Yourself</h2>
+          <p>Use hashtags to add tweets to your hashpage.</p>
+          <ul>
+            <li>The Banner</li>
+            <li>Use a <b>#b</b> hashtag to add tweet to the banner</li>
+          </ul>
+        </div>
+        <div class="image small">
+          <blockquote class="twitter-tweet" lang="en"><p>My hair is a bit out of control. <a href="https://twitter.com/hashtag/b?src=hash">#b</a> <a href="http://t.co/az0c1Qo8wW">pic.twitter.com/az0c1Qo8wW</a></p>&mdash; dave woodall (@wwwoodall) <a href="https://twitter.com/wwwoodall/status/592084427657752576">April 25, 2015</a></blockquote>
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </section>
+      <section class='site-example row'>
+        <div class="image big">
+          <%= image_tag 'page_ex.jpg' %>
+        </div>
+        <div class="copy small">
+          <h2>Twitter as a CMS</h2>
+          <p>hashPage uses Twitter as a Content Management Platform. Create and manage a webpage with tweets.</p>
+        </div>
+      </section>
+        <p>Start by adding a <span class='b'>#b</span> to a tweet. Like so... </p>
+        <div class="example-banner-tweet">
+          A smooth sea never made a skilled mariner. <span class='b'>#b</span>
 
-<section class='about-hp'>
-  <div class="pitch">
-    <h3>What's a hashPage?</h3>
-    <p>A hashPage makes your tweets look good.</p>
+        </div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="A smooth sea never made a skilled mariner #b" data-size="
+        large" data-count="none">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </section>
   </div>
-  <section class='tweet-example row'>
-    <div class="copy big">
-      <h2>Trend Yourself</h2>
-      <p>Use hashtags to add tweets to your hashpage.</p>
+</div>
+
+<div class="fake-page">
+  <section class='banner'>
+    <div class="image animated fadeIn">
+      <%= image_tag 'boat.png' %>
+      <p>
+        <span class='username'>@<%= params[:id] %></span>
+      </p>
+    </div>
+    <div class="text animated short-delay fadeIn">
+      <p>A smooth sea never made a skilled mariner.</p>
+    </div>
+  </section>
+  <section class='tweets'>
+    <aside class='animated long-delay fadeInUp'>
+      <p>HashTags</p>
       <ul>
-        <li>The Banner</li>
-        <li>Use a <b>#b</b> hashtag to add tweet to the banner</li>
+        <li>#FavoriteQuotes</li>
+        <li>#BooksForQuoting</li>
+        <li>#MusicLyrics</li>
+        <li>#photosOfWords</li>
       </ul>
-    </div>
-    <div class="image small">
-      <blockquote class="twitter-tweet" lang="en"><p>My hair is a bit out of control. <a href="https://twitter.com/hashtag/b?src=hash">#b</a> <a href="http://t.co/az0c1Qo8wW">pic.twitter.com/az0c1Qo8wW</a></p>&mdash; dave woodall (@wwwoodall) <a href="https://twitter.com/wwwoodall/status/592084427657752576">April 25, 2015</a></blockquote>
-      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
+    </aside>
+    <section class='content animated short-delay fadeIn'>
+      <h2>Favorite Quotes</h2>
+      <p>The darkest times hide the most valuable treasures.</p>
+      <p>Everything will be okay in the end. If it's not okay then it's not the end.</p>
+    </section>
   </section>
-  <section class='site-example row'>
-    <div class="image big">
-      <%= image_tag 'page_ex.jpg' %>
-    </div>
-    <div class="copy small">
-      <h2>Twitter as a CMS</h2>
-      <p>hashPage uses Twitter as a Content Management Platform. Create and manage a webpage with tweets.</p>
-    </div>
+  <section class='footer'>
   </section>
-</section>
+</div>

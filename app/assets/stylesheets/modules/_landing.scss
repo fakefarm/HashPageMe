@@ -3,6 +3,7 @@
 h1,
 h2,
 h3,
+h4,
 p {
   font-family: 'Lato';
 }
@@ -33,6 +34,7 @@ body {
 
 .hero {
   background-image: -webkit-linear-gradient(135deg,  #8722EC, #00DBDB);
+  background-image: -mox-gradient(135deg,  #8722EC, #00DBDB);
   background-image: linear-gradient(to bottom,#8722EC, #00DBDB);
   padding-bottom: 5em;
 

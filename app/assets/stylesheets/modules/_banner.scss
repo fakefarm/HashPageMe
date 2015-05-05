@@ -1,7 +1,13 @@
+.show-nav {
+  position: absolute;
+  z-index: 999;
+  right: 1em;
+  bottom: 0.5em;
+}
+
 .banner {
   @include row();
   position: relative;
-  background: #FFCC66;
 
   .image {
     @include media($medium-screen) {
@@ -15,13 +21,13 @@
   .username {
     color: white;
     position: absolute;
-    bottom: 2em;
+    bottom: 4em;
     left: 0.5em;
-    font-size: 2em;
+    font-size: 1.2em;
     @include media($medium-screen) {
-      font-size: 3em;
-      bottom: 0.5em;
-      left: 0.5em;
+      font-size: 2em;
+      bottom: 0.1em;
+      left: 1em;
     }
   }
 
@@ -30,9 +36,9 @@
     font-size: 1em;
     @include media($medium-screen) {
       @include span-columns(5);
-      padding-top: 15%;
+      padding-top: 12em;
       text-align: center;
-      font-size: 2em;
+      font-size: 1.4em;
     }
   }
 
@@ -99,4 +105,52 @@
 
 .pitch {
   text-align: center;
+}
+
+.promo {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 120em;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 63, 127, 0.7);
+  opacity: 0.5;
+}
+
+.fake-page {
+  .banner {
+    background: white;
+    .username {
+      color: #28476D;
+    }
+  }
+  .text {
+    @include media($medium-screen) {
+      text-align: left;
+      padding: 7em 0.4em 4em;
+      font-size: 1.8em;
+      height: 100%;
+    }
+  }
+  .tweets {
+    @include row;
+    padding-left: 3em;
+    aside {
+      @include media($medium-screen) {
+        @include span-columns(3);
+        border: 1px solid #eee;
+        border-radius: 5px;
+        padding: 2em;
+        margin-top: 3em;
+      }
+    }
+    .content {
+      @include media($medium-screen) {
+        min-height: 400px;
+        padding: 3em 4em;
+        @include span-columns(9);
+      }
+    }
+  }
 }

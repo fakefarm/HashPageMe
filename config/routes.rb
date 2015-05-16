@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   root 'fetchers#new'
+  get '/dave', to: 'themes#lewis'
   get ':id', to: 'fetchers#show'
   get 'pages/all', to: 'fetchers#index'
   get 'pages/all', to: 'fetchers#index'
   get 'themes/lewis', to: 'themes#lewis'
   get 'themes/lewis/boats', to: 'themes#lewis_show'
+  get 'themes/lewis/about', to: 'themes#lewis_about'
+  get 'themes/lewis/contact', to: 'themes#lewis_contact'
   resource :fetchers, except: [:show]
 
 

@@ -1,32 +1,10 @@
 <div class="l-container">
-  <header id="header" class="">
-    <div class="l-logo">
-      <%= image_tag 'logo.gif', style:'width: 100px;' %>
-      <p>lewis</p>
-    </div>
-    <div class="l-nav">
-      <div class="title">
-        <p>menu</p>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="" title="">home</a></li>
-          <li><a href="" title="">about</a></li>
-          <li><a href="" title="">contact</a></li>
-          <li>----------</li>
-          <li><a href="/boats" title="">#boats</a></li>
-          <li><a href="" title="">#faith</a></li>
-          <li><a href="" title="">#rants</a></li>
-          <li><a href="" title="">#art</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header><!-- /header -->
+  <%= render 'themes/lewis_header' %>
   <div class="l-wrapper">
     <div class="l-content">
       <div class="list">
         <div class="item">
-          <%= link_to 'boats' do %>
+          <%= link_to 'themes/lewis/boats' do %>
           <div class="title">
             <h1>#boats</h1>
           </div>
@@ -62,4 +40,5 @@
       </div>
     </div>
   </div>
+  <%= render 'themes/lewis_footer' %>
 </div>

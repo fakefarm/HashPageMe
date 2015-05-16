@@ -1,14 +1,21 @@
-.l-container {}
+.l-container {
+  padding: 1em;
+  @include media($medium-screen) {
+    padding: 0;
+  }
+}
 
 header {
-  @include media($medium-screen) {
-  }
+
   .l-nav {
+    display: none;
     @include media($medium-screen) {
+      display: block;
       position: absolute;
       right: 10px;
       top: 0;
       bottom: 0;
+      height: 100%;
     }
 
     &:hover > nav {
@@ -20,6 +27,9 @@ header {
     .title {
       @include media($medium-screen) {
         font-size: 1em;
+        position: fixed;
+        right: 1em;
+        top: 2em;
       }
     }
     nav {
@@ -97,16 +107,35 @@ header {
 }
 
 .tweet {
+  margin-bottom: 5em;
   @include media($medium-screen) {
+    margin-bottom: 0;
     padding: 2em 0;
   }
+  .image {
+    padding: 0.25em 0;
+    img { width: 100%; }
+  }
+  .text {
+    font-size: 0.9em;
+    @include media($medium-screen) {
+      font-size: 1em;
+
+    }
+  }
   .actions {
-    position: relative;
-    top: -40px;
+    @include media($medium-screen) {
+      position: relative;
+      top: -40px;
+    }
   }
 
   .details {
     text-align: right;
+    display: none;
+    @include media($medium-screen) {
+      display: block;
+    }
   }
 
   .details:hover + .btns, .btns:hover {
@@ -122,10 +151,27 @@ header {
     }
 
     li {
+      display: inline-block;
+      margin: 0 0.5em;
       @include media($medium-screen) {
-        display: inline-block;
         margin: 0 2em;
       }
     }
+  }
+}
+
+footer {
+  a {
+    background: #00FF80;
+    display: inline-block;
+    padding: 0.5em;
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+    margin: 0.25em 0;
+  }
+
+  @include media($medium-screen) {
+    display: none;
   }
 }

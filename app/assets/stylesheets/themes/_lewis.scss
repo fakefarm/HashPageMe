@@ -1,0 +1,131 @@
+.l-container {}
+
+header {
+  @include media($medium-screen) {
+  }
+  .l-nav {
+    @include media($medium-screen) {
+      position: absolute;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+    }
+
+    &:hover > nav {
+      @include transition(all 300ms ease-in-out);
+      visibility: visible;
+      opacity: 1;
+      right: 0;
+    }
+    .title {
+      @include media($medium-screen) {
+        font-size: 1em;
+      }
+    }
+    nav {
+      @include media($medium-screen) {
+        @include transition(all 300ms ease-in-out);
+        visibility: hidden;
+        opacity: 0;
+        @include linear-gradient(to top, #FF6666, #FC513F);
+        position: absolute;
+        width: 10em;
+        height: 100%;
+        right: -100px;
+        top: 0;
+        padding: 2em;
+        font-size: 3em;
+        a {
+          color: white;
+          &:hover { color: #66CCFF; }
+        }
+      }
+    }
+  }
+}
+
+.l-wrapper {
+  @include media($medium-screen) {
+    padding: 1em 5em;
+    @include outer-container;
+  }
+  .l-content {
+    @include media($medium-screen) {
+    }
+  }
+  .item {
+    @include media($medium-screen) {
+      @include row();
+      border-bottom: 9px solid white;
+      margin: 2em 0;
+      padding: 2em;
+    }
+    &:hover {
+      @include transition(all 120ms ease-in-out);
+      cursor: pointer;
+
+      &:nth-child(odd) {
+        color: #FF8000;
+        background: #FF6666;
+        border-bottom: 9px solid #0080FF;
+      }
+
+      &:nth-child(even) {
+        color: #FF00FF;
+        background: #0000FF;
+        border-bottom: 9px solid #FF00FF;
+      }
+      &:nth-child(3n+0) {
+        color: #FFFFFF;
+        background: #008080;
+        border-bottom: 9px solid #FF0000;
+      }
+    }
+    .title {
+      @include media($medium-screen) {
+        @include span-columns(4);
+      }
+    }
+    .sub-title {
+      @include media($medium-screen) {
+        @include span-columns(8);
+        font-size: 2em;
+        color: #aaa;
+      }
+    }
+  }
+}
+
+.tweet {
+  @include media($medium-screen) {
+    padding: 2em 0;
+  }
+  .actions {
+    position: relative;
+    top: -40px;
+  }
+
+  .details {
+    text-align: right;
+  }
+
+  .details:hover + .btns, .btns:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .btns {
+    @include media($medium-screen) {
+      visibility: hidden;
+      opacity: 0;
+      text-align: right;
+    }
+
+    li {
+      @include media($medium-screen) {
+        display: inline-block;
+        margin: 0 2em;
+      }
+    }
+  }
+}

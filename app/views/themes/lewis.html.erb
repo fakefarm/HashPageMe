@@ -1,0 +1,65 @@
+<div class="l-container">
+  <header id="header" class="">
+    <div class="l-logo">
+      <%= image_tag 'logo.gif', style:'width: 100px;' %>
+      <p>lewis</p>
+    </div>
+    <div class="l-nav">
+      <div class="title">
+        <p>menu</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="" title="">home</a></li>
+          <li><a href="" title="">about</a></li>
+          <li><a href="" title="">contact</a></li>
+          <li>----------</li>
+          <li><a href="/boats" title="">#boats</a></li>
+          <li><a href="" title="">#faith</a></li>
+          <li><a href="" title="">#rants</a></li>
+          <li><a href="" title="">#art</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header><!-- /header -->
+  <div class="l-wrapper">
+    <div class="l-content">
+      <div class="list">
+        <div class="item">
+          <%= link_to 'boats' do %>
+          <div class="title">
+            <h1>#boats</h1>
+          </div>
+          <div class="sub-title">
+            notes about boats
+          </div>
+          <% end %>
+        </div>
+        <div class="item">
+          <div class="title">
+            <h1>#faith</h1>
+          </div>
+          <div class="sub-title">
+            Everything begins with the Creator
+          </div>
+        </div>
+        <div class="item">
+          <div class="title">
+            <h1>#rant</h1>
+          </div>
+          <div class="sub-title">
+            views about random things
+          </div>
+        </div>
+        <div class="item">
+          <div class="title">
+            <h1>#art</h1>
+          </div>
+          <div class="sub-title">
+            some of my work
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

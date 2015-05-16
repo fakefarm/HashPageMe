@@ -1,0 +1,30 @@
+<div class="l-container">
+  <%= render 'themes/lewis_header' %>
+  <div class="l-wrapper">
+    <div class="l-content">
+      <div class="list">
+        <div class="item">
+          <div class="title">
+            <h1>shop</h1>
+          </div>
+          <div class="image">
+            <%= image_tag 'whale.gif' %>
+          </div>
+        </div>
+        <div class="tweets">
+          <div class="tweet">
+            <div class="text">
+              <h4>Splash Page</h4>
+              <p>
+                Need a website? I make simple splash pages.
+              </p>
+              <h3>$95</h3>
+              <h3><%= link_to 'Buy Now', 'https://gumroad.com/l/GsQV' %></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'themes/lewis_footer' %>
+</div>

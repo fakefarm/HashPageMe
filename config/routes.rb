@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'themes/lewis/boats', to: 'themes#lewis_show'
   get 'themes/lewis/about', to: 'themes#lewis_about'
   get 'themes/lewis/contact', to: 'themes#lewis_contact'
+  get 'themes/lewis/shop', to: 'themes#lewis_shop'
   resource :fetchers, except: [:show]
 
 

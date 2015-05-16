@@ -1,6 +1,11 @@
 # _dw Code Review
+# presenters created in controller for use in view.
+# doing things that don't belong in the model but don't want them to be helper methods. still want to be OO and test in iscolation.
+# presnters should always be thin and to the point as possible.
 
-class BannerPresenter < TweetParser
+class BannerPresenter
+  include TweetParser # object methods
+  # extend TweetParser would be class methods
 
   attr_reader :tweets
 

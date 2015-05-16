@@ -9,10 +9,6 @@ class FetcherPresenter
   def tweet_count
     tweets.count # rather than calling @tweets... get a hook.
   end
-
-  def show_90_day_data
-    tweets.select { |t| t.created_at > 3.month.ago }
-  end
 end
 
 # NOTES

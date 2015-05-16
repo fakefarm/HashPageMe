@@ -23,14 +23,6 @@ class RetweetCounterPresenterTest < ActiveSupport::TestCase
 
 private
 
-  def sample_tweets
-    [
-      Twitter::Tweet.new(id: 1, retweet_count: 2, retweeted_tweet?: false, hashtags: Twitter::Entity::Hashtag.new(text: 'foo')),
-      Twitter::Tweet.new(id: 4, retweet_count: 5, retweeted_tweet?: false, hashtags: Twitter::Entity::Hashtag.new(text: 'foo')),
-      Twitter::Tweet.new(id: 3, retweet_count: 5, retweeted_tweet?: true,  hashtags: Twitter::Entity::Hashtag.new(text: 'baz')),
-      Twitter::Tweet.new(id: 2, retweet_count: 1, retweeted_tweet?: false, hashtags: Twitter::Entity::Hashtag.new(text: 'bar'))
-    ]
-  end
 end
 
 ## pass a list of tweets

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'page', to: 'hashpages#index'
   root 'fetchers#new'
   get '/dave', to: 'themes#lewis'
   get ':id', to: 'fetchers#show'

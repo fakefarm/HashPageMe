@@ -35,6 +35,4 @@ class ActiveSupport::TestCase
       Twitter::Tweet.new(id: 2, retweet_count: 1, retweeted_tweet?: false, hashtags: Twitter::Entity::Hashtag.new(text: 'bar'))
     ]
   end
-
-  # Add more helper methods to be used by all tests here...
 end

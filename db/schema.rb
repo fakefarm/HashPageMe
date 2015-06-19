@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150619214214) do
   add_index "fetchers", ["slug"], name: "index_fetchers_on_slug"
 
   create_table "raw_tweets", force: true do |t|
-    t.integer  "user_id"
     t.string   "username"
     t.string   "hashtags"
     t.string   "text"
@@ -31,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150619214214) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tweet_id"
+    t.integer  "user_id"
   end
 
 end

@@ -1,7 +1,6 @@
 class CreateRawTweets < ActiveRecord::Migration
   def change
     create_table :raw_tweets do |t|
-      t.integer :user_id
       t.string :username
       t.string :hashtags
       t.string :text

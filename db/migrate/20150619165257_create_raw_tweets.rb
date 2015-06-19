@@ -1,7 +1,7 @@
 class CreateRawTweets < ActiveRecord::Migration
   def change
     create_table :raw_tweets do |t|
-      t.integer :tweet_id
+      t.integer :tweet_id, limit: 8
       t.integer :user_id
       t.string :username
       t.string :hashtags

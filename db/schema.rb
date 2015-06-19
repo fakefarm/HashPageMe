@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619165257) do
+ActiveRecord::Schema.define(version: 20150619214214) do
 
   create_table "fetchers", force: true do |t|
     t.string   "username"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150619165257) do
   add_index "fetchers", ["slug"], name: "index_fetchers_on_slug"
 
   create_table "raw_tweets", force: true do |t|
-    t.integer  "tweet_id"
     t.integer  "user_id"
     t.string   "username"
     t.string   "hashtags"
@@ -31,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150619165257) do
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tweet_id"
   end
 
 end

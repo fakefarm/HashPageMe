@@ -1,12 +1,23 @@
-# Read about fixtures at
-# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+custom_one:
+  tweet_id: 123
+  user_id: 456
+  username: 'dave'
+  hashtags: 'h, think'
+  text: 'as a man thinketh'
+  image: ''
 
-one:
-  blog: MyText
-  tweet_id: 1
-  user_id: 1
+custom_two:
+  tweet_id: 124
+  user_id: 456
+  username: 'dave'
+  hashtags: 'h, feel'
+  text: 'as a man feeleth'
+  image: ''
 
-two:
-  blog: MyText
-  tweet_id: 1
-  user_id: 1
+basic:
+  tweet_id: 125
+  user_id: 456
+  username: 'dave'
+  hashtags: 'do'
+  text: 'as a man doeth'
+  image: ''

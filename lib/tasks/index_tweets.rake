@@ -23,6 +23,5 @@ namespace :twitter do
   task :polish, [:username] => [:environment] do |t, args|
     tweets = RawTweet.where(username: args[:username])
     custom_tweets = CustomHashtagPresenter.new(tweets).custom_tweets
-    pp custom_tweets.first.to_hash
   end
 end

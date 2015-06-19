@@ -8,6 +8,9 @@ class CustomHashtagPresenter
   def custom_tweets
     # _dw - this regex needs work!
     # Tom
-    tweets.select { |t|  t.hashtags =~ /h,/ }
+    tw = tweets.select do |t|
+      t.hashtags =~ /h,/ || t.hashtags =~ /b/ #b is temporary since it was my old test for 'banner'
+    end
   end
 end
+

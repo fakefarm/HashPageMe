@@ -1,1 +1,39 @@
-<%= @banner.text %>
+<div class="l-container">
+  <div class="l-wrapper">
+    <div class="l-content">
+      <div class="list">
+        <div class="item">
+          <div class="title">
+            <h1><%= @custom_tweets.first.username %></h1>
+          </div>
+          <div class="sub-title">
+            <%= @custom_tweets.count %> tweets
+          </div>
+        </div>
+        <div class="tweets">
+          <% @custom_tweets.each do |t| %>
+          <div class="tweet">
+            <div class="image">
+              <%= image_tag t.image if t.image.present? %>
+            </div>
+            <div class="text">
+              <p>
+                <%= t.text %>
+              </p>
+            </div>
+            <div class="actions">
+              <div class='details'><a href="" title="details">details</a></div>
+              <ul class='btns'>
+                <li><%= link_to 'reply', "http://www.twitter.com/#{t.username}/status/#{t.tweet_id}", target: '_blank'%></li>
+                <li><%= link_to 'retweet', "http://www.twitter.com/#{t.username}/status/#{t.tweet_id}", target: '_blank'%></li>
+                <li><%= link_to 'favorite', "http://www.twitter.com/#{t.username}/status/#{t.tweet_id}", target: '_blank'%></li>
+              </ul>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'themes/lewis_footer' %>
+</div>

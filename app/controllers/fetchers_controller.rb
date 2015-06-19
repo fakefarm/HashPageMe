@@ -8,29 +8,8 @@ class FetchersController < ApplicationController
   end
 
   def show
-    # _dw TODO - make params create a new fetcher.
-
-    client = TwitterClientWrapper.new
-    tweets = client.get_all_tweets(params[:id])
-    #   @content    = do all custom tweets(tweets)
-    #   @extra      = extra_pages(tweets)
-    #   @customized = customize(tweets)
-    #   @content    = all_that_stuff
-
-    # _dw Code Review
-    # HOMEWORK
-    # The goal is to only call this object once then use it's methods
-    # refactor these 3 calls into single call.
-    # @banner.image
-    # @banner.text
-    # run this in rake take
-    # I was going to try to do this, but my first thought was, well since I'm going to refactor then I should have some tests for this. So I opened my tests and there were none. So, I wonder if we do;
-    # A - write tests and use this?
-    # B - punt and return to this when it's time.
-    # (I vote for B)
-    @banner       = BannerPresenter.new(tweets).banner
-    @banner_image = BannerPresenter.new(tweets).image
-    @banner_text  = BannerPresenter.new(tweets).text
+    tweets = RawTweet.where(username: params[:id])
+    @custom_tweets = CustomHashtagPresenter.new(tweets).custom_tweets
   end
 
   def new

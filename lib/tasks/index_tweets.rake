@@ -4,12 +4,10 @@ namespace :twitter do
     include RawTweetScrubber
     client  = TwitterClientWrapper.new
     tweets  = client.get_all_tweets(args[:username])
-    # banner = BannerPresenter.new(tweets).banner
-
-
     tweets.each do |t|
       RawTweet.create( tweet_id: t.id,
                        user_id: t.user.id,
+                       username: t.user.screen_name,
                        hashtags: hashtags(t),
                        text: t.text,
                        image: image_url(t)
@@ -19,5 +17,12 @@ namespace :twitter do
     raw_tweet_count = RawTweet.where(user_id: tweets.first.user.id).count
 
     puts "#{raw_tweet_count} raw tweets imported for #{args[:username]}!"
+  end
+
+  desc 'Polish tweets for hashpage'
+  task :polish, [:username] => [:environment] do |t, args|
+    tweets = RawTweet.where(username: args[:username])
+    custom_tweets = CustomHashtagPresenter.new(tweets).custom_tweets
+    pp custom_tweets.first.to_hash
   end
 end

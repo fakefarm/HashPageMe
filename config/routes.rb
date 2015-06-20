@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   get 'page', to: 'hashpages#index'
   root 'fetchers#new'
   get '/dave', to: 'themes#lewis'
-  get ':id', to: 'fetchers#show'
-  get 'pages/all', to: 'fetchers#index'
-  get 'pages/all', to: 'fetchers#index'
+  get ':id', to: 'fetchers#index'
+  get ':id/:hashtag', to: 'fetchers#show', as: :hashtag # _dw TOM how can I call hashtag_path(h)
   get 'themes/lewis', to: 'themes#lewis'
   get 'themes/lewis/boats', to: 'themes#lewis_show'
   get 'themes/lewis/about', to: 'themes#lewis_about'

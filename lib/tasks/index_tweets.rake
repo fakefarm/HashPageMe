@@ -3,7 +3,9 @@ namespace :twitter do
   task :get, [:username] => [:environment] do |t, args| #t stands for the task itself.
     include RawTweetScrubber
     client  = TwitterClientWrapper.new
-    tweets  = client.get_all_tweets(args[:username])
+    # 605412578001620992
+    # tweets  = client.get_all_tweets(args[:username])
+    tweets  = client.get_all_tweets('wwwoodall')
     tweets.each do |t|
       RawTweet.create( tweet_id: t.id,
                        user_id: t.user.id,

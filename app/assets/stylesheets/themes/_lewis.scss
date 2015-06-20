@@ -67,8 +67,8 @@ header {
     @include media($medium-screen) {
       @include row();
       border-bottom: 9px solid white;
-      margin: 2em 0;
-      padding: 2em;
+      // margin: 2em 0;
+      // padding: 2em;
     }
     &:hover {
       @include transition(all 120ms ease-in-out);

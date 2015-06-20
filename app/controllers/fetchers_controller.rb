@@ -4,12 +4,14 @@ class FetchersController < ApplicationController
   include TwitterUtilities
 
   def index
-    @fetchers = Fetcher.all
+    @username = params[:id]
+    tweets = RawTweet.where(username: params[:id])
+    @hashtags = CustomHashtagPresenter.new(tweets).hashtags
   end
 
   def show
     tweets = RawTweet.where(username: params[:id])
-    @custom_tweets = CustomHashtagPresenter.new(tweets).custom_tweets
+    @custom_tweets = CustomHashtagPresenter.new(tweets).custom_tweets(params[:hashtag])
   end
 
   def new

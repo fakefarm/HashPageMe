@@ -1,19 +1,15 @@
-<h1>Hashpages</h1>
-
 <div class="l-container">
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @fetchers.each do |fetcher| %>
-        <tr>
-          <td><%= link_to "#{fetcher.username}", "/#{fetcher.username}" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render 'themes/lewis_header' %>
+  <div class="l-wrapper">
+    <div class="l-content">
+      <div class="list">
+        <% @hashtags.each do |h| %>
+          <div class="item">
+            <p><%= link_to h, "#{h}" %></p>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <%= render 'themes/lewis_footer' %>
 </div>

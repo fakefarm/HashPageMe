@@ -5,7 +5,7 @@
       <div class="list">
         <% @hashtags.each do |h| %>
           <div class="item">
-            <p><%= link_to h, "#{h}" %></p>
+            <p><%= link_to h, "/#{@username}/#{h}" %></p>
           </div>
           <% end %>
       </div>

@@ -10,6 +10,7 @@ class FetchersController < ApplicationController
   end
 
   def show
+    @username = params[:id]
     tweets = RawTweet.where(username: params[:id])
     @custom_tweets = CustomHashtagPresenter.new(tweets).custom_tweets(params[:hashtag])
   end

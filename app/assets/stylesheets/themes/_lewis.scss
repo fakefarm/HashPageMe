@@ -70,6 +70,14 @@ header {
       // margin: 2em 0;
       // padding: 2em;
     }
+    p {
+      @include media($medium-screen) {
+        font-size: 3em;
+        margin: 0;
+        padding: 0;
+        padding-left: 0.5em;
+      }
+    }
     &:hover {
       @include transition(all 120ms ease-in-out);
       cursor: pointer;
@@ -82,13 +90,13 @@ header {
 
       &:nth-child(even) {
         color: #FF00FF;
-        background: #0000FF;
+        background: #83FFB5;
         border-bottom: 9px solid #FF00FF;
       }
       &:nth-child(3n+0) {
         color: #FFFFFF;
-        background: #008080;
-        border-bottom: 9px solid #FF0000;
+        background: #FF6FCF;
+        border-bottom: 9px solid #FFCC66;
       }
     }
     .title {

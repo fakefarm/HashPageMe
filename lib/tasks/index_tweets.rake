@@ -1,19 +1,13 @@
 namespace :twitter do
   desc 'Get some tweets from a user'
   task :get, [:username] => [:environment] do |t, args| #t stands for the task itself.
-    include RawTweetScrubber
+    # include RawTweetScrubber
     client  = TwitterClientWrapper.new
     # 605412578001620992
-    # tweets  = client.get_all_tweets(args[:username])
-    tweets  = client.get_all_tweets('wwwoodall')
+    tweets  = client.get_all_tweets(args[:username])
+
     tweets.each do |t|
-      RawTweet.create( tweet_id: t.id,
-                       user_id: t.user.id,
-                       username: t.user.screen_name,
-                       hashtags: hashtags(t),
-                       text: t.text,
-                       image: image_url(t)
-                      )
+      TwitterImporter.new(t).import!
     end
 
     raw_tweet_count = RawTweet.where(user_id: tweets.first.user.id).count

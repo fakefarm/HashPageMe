@@ -11,7 +11,7 @@ gem 'bitters'
 # hashPage versioning...
 # gem 'paper_trail', '~> 4.0.0.beta'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.11'
 gem 'sqlite3', group: :development
 
 gem 'sass-rails', '~> 4.0.3'

@@ -1,18 +1,8 @@
 <header id="header" class="">
-    <div class="l-logo">
-      <p><%= @username %></p>
+  <div class="l-nav">
+    <div class="title">
+      <p>menu</p>
     </div>
-    <div class="l-nav">
-      <div class="title">
-        <p>menu</p>
-      </div>
-      <nav>
-        <ul>
-          <li><%= link_to 'home', "/#{@username}" %></li>
-          <li><%#= about %></li>
-          <li><%#= contact %></li>
-          <li><%#= shop %></li>
-        </ul>
-      </nav>
-    </div>
-  </header><!-- /header -->
+    <%= render 'partials/nav_list' %>
+  </div>
+</header><!-- /header -->

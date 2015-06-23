@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <li><%= link_to 'home', "/#{@username}" %></li>
+    <li><%= link_to 'about', "/#{@username}/about" %></li>
+  </ul>
+  <div><hr></div>
+  <ul>
+    <% @hashtags.each do |tag| %>
+      <li><%= link_to tag, "/#{@username}/#{tag}" %></li>
+    <% end %>
+  </ul>
+</nav>

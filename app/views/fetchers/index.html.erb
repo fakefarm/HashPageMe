@@ -1,15 +1,5 @@
-<div class="l-container">
-  <%= render 'partials/nav' %>
-  <div class="l-wrapper">
-    <div class="l-content">
-      <div class="list">
-        <% @hashtags.each do |h| %>
-          <div class="item">
-            <p><%= link_to h, "/#{@username}/#{h}" %></p>
-          </div>
-          <% end %>
-      </div>
-    </div>
+<% @hashtags.each do |h| %>
+  <div class="item">
+    <p><%= link_to h, "/#{@username}/#{h}" %></p>
   </div>
-  <%= render 'themes/lewis_footer' %>
-</div>
+<% end %>

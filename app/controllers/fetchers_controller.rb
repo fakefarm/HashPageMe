@@ -1,18 +1,20 @@
 class FetchersController < ApplicationController
   before_action :set_fetcher, only: [:show, :edit, :update, :destroy]
-  helper_method :get_tweets
+  before_action :username
+  before_action :tweets
+  before_action :get_hashtags
+  helper_method :hashtags
   include TwitterUtilities
 
   def index
-    @username = params[:id]
-    tweets = RawTweet.where(username: params[:id])
-    @hashtags = CustomHashtagPresenter.new(tweets).hashtags
   end
 
   def show
-    @username = params[:id]
-    tweets = RawTweet.where(username: params[:id])
-    @custom_tweets = CustomHashtagPresenter.new(tweets).custom_tweets(params[:hashtag])
+    @custom_tweets = CustomHashtagPresenter.new(@tweets).custom_tweets(params[:hashtag])
+  end
+
+  def about
+    @about_tweets = AboutPresenter.new(@tweets).about_tweets(params[:hashtag])
   end
 
   def new
@@ -58,6 +60,19 @@ class FetchersController < ApplicationController
   end
 
   private
+
+    def get_hashtags
+      @hashtags = CustomHashtagPresenter.new(@tweets).hashtags
+    end
+
+    def tweets
+      @tweets = RawTweet.where(username: params[:id])
+    end
+
+    def username
+      @username = params[:id]
+    end
+
     def set_fetcher
       @fetcher = Fetcher.find_by_slug(params[:id])
     end

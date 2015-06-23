@@ -21,3 +21,11 @@ basic:
   hashtags: 'do'
   text: 'as a man doeth'
   image: ''
+
+about:
+  tweet_id: 126
+  user_id: 456
+  username: 'dave'
+  hashtags: 'about'
+  text: 'I love tacos!'
+  image: ''

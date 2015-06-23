@@ -1,0 +1,6 @@
+<h1>About <%= @username %></h1>
+<div class="list">
+  <% @about_tweets.each do |t| %>
+    <%= link_to only_text(t.text), tweet_path(t) %>
+  <% end %>
+</div>

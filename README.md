@@ -14,3 +14,13 @@ Hashpage can be thought of 3 different things;
 - use hashtags to trend yourself rather than trends on twitter
 - using twitter as a CMS to build a site
 
+
+## Tag types
+
+### Custom
+h subject
+
+### KeyWords
+title
+about / aboutme
+

@@ -29,3 +29,11 @@ about:
   hashtags: 'about'
   text: 'I love tacos!'
   image: ''
+
+contact:
+  tweet_id: 126
+  user_id: 456
+  username: 'dave'
+  hashtags: 'email'
+  text: 'I love tacos!'
+  image: ''

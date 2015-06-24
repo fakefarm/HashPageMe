@@ -17,6 +17,10 @@ class FetchersController < ApplicationController
     @about_tweets = AboutPresenter.new(@tweets).about_tweets(params[:hashtag])
   end
 
+  def contact
+    @contact_tweets = ContactPresenter.new(@tweets).contact_tweets(params[:hashtag])
+  end
+
   def new
     @fetcher = Fetcher.new
   end

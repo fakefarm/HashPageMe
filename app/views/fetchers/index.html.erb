@@ -1,3 +1,4 @@
+<h1>@<%= @username %>'s hashtags</h1>
 <% @hashtags.each do |h| %>
   <div class="item">
     <p><%= link_to h, "/#{@username}/#{h}" %></p>

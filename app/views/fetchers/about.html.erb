@@ -1,4 +1,4 @@
-<h1>About <%= @username %></h1>
+<h2>#about @<%= @username %></h2>
 <p>
   <% @about_tweets.each do |t| %>
     <%= link_to tweet_path(t), target: '_blank' do %>

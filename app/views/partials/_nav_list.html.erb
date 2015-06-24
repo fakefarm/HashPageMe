@@ -9,4 +9,11 @@
       <li><%= link_to tag, "/#{@username}/#{tag}" %></li>
     <% end %>
   </ul>
+  <div><hr></div>
+  <ul>
+    <li><%= link_to "http://www.twitter.com/#{@username}" do %>
+        <i class='fa fa-twitter'></i>
+      <% end %>
+    </li>
+  </ul>
 </nav>

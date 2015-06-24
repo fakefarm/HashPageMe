@@ -1,6 +1,12 @@
 <h1>About <%= @username %></h1>
-<div class="list">
+<p>
   <% @about_tweets.each do |t| %>
-    <%= link_to only_text(t.text), tweet_path(t) %>
+    <%= link_to tweet_path(t), target: '_blank' do %>
+      <%= only_text(t.text) %>
+      <% if  t.image.present? %>
+        <i class="fa fa-camera-retro"></i>
+      <% end %>
+    <% end %>
+    &nbsp;
   <% end %>
-</div>
+</p>

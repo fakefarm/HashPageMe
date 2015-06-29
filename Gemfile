@@ -13,7 +13,6 @@ gem 'bitters'
 # gem 'paper_trail', '~> 4.0.0.beta'
 
 gem 'rails', '4.1.11'
-gem 'sqlite3', group: :development
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -23,7 +22,11 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'spring',        group: :development
+group :development do
+  gem 'sqlite3'
+  gem 'spring'
+  gem 'xray-rails'
+end
 
 group :production do
   gem 'pg'

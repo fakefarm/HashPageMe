@@ -1,3 +1,8 @@
+Get presenters into the view
+View doesn't need to go plumbing around looking for it's data,
+it's just a method.
+
+
 # Jon Daniel 6/17/15
 
 - live code the rake task.

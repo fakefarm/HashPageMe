@@ -1,5 +1,6 @@
 Mentoring:
- ☐ should I be working with objects for hashtags on index? Or are strings okay?
+ ✔ should I be working with objects for hashtags on index? Or are strings okay? @done (15-06-29 14:17)
+
 
 styling:
  ☐ neutral DOM for styling
@@ -7,3 +8,5 @@ styling:
 
  Custom tweets:
  ☐ youtube condition to show it in the show page.
+
+

@@ -1,6 +1,7 @@
 <h1>@<%= @username %>'s hashtags</h1>
-<% @hashtags.each do |h| %>
+<% @presenter.tweets_on_index_page.each do |h| %>
   <div class="item">
-    <p><%= link_to h, "/#{@username}/#{h}" %></p>
+    <%= image_tag h.image if h.image.present? %>
+    <%= CustomTweetsPresenter.hashtags(h.hashtags) %>
   </div>
 <% end %>

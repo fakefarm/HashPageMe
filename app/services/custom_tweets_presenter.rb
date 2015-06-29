@@ -1,5 +1,9 @@
-class CustomHashtagPresenter
+class CustomTweetsPresenter
   attr_reader :tweets
+
+  def self.hashtags(tweet) # _dw Why does this need to be class? How can I get it to be an object or helper method that is still in this class?
+    tweet.split(',')[1]
+  end
 
   def initialize(tweets)
     @tweets = tweets
@@ -23,5 +27,11 @@ class CustomHashtagPresenter
     end
     tags.uniq - ['h']
   end
-end
 
+  def tweets_on_index_page
+    all = hashtags.map do |h|
+      RawTweet.hash_tags_newest_tweets(h)
+    end
+    all.map { |t| t.first }
+  end
+end

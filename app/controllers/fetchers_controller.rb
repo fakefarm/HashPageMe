@@ -2,7 +2,7 @@ class FetchersController < ApplicationController
   before_action :set_fetcher, only: [:show, :edit, :update, :destroy]
   before_action :username
   before_action :tweets
-  before_action :get_hashtags
+  before_action :create_presenter
   helper_method :hashtags
   include TwitterUtilities
 
@@ -10,7 +10,7 @@ class FetchersController < ApplicationController
   end
 
   def show
-    @custom_tweets = CustomHashtagPresenter.new(@tweets).custom_tweets(params[:hashtag])
+    @custom_tweets = CustomTweetsPresenter.new(@tweets).custom_tweets(params[:hashtag])
   end
 
   def about
@@ -65,8 +65,8 @@ class FetchersController < ApplicationController
 
   private
 
-    def get_hashtags
-      @hashtags = CustomHashtagPresenter.new(@tweets).hashtags
+    def create_presenter
+      @presenter = CustomTweetsPresenter.new(@tweets)
     end
 
     def tweets

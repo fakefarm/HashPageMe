@@ -1,0 +1,11 @@
+.list-light {
+  background: #66FF66;
+  .item {
+    .tweet-image { display: none; }
+    @include media($medium-screen) {
+      background: white;
+      padding: 1em;
+      margin: 1em;
+    }
+  }
+}

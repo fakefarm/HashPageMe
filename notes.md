@@ -1,3 +1,9 @@
+# Jon D. 2015-07-01
+
+# HOMEWORK
+Database Theory & Fundamentals
+
+
 Get presenters into the view
 View doesn't need to go plumbing around looking for it's data,
 it's just a method.

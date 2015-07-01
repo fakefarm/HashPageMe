@@ -11,7 +11,7 @@ class TwitterImporter
     RawTweet.create( tweet_id: tweet.id,
                      user_id: tweet.user.id,
                      username: tweet.user.screen_name,
-                     hashtags: hashtags(tweet),
+                     hashtags: hashtags(tweet), # HOMEWORK _dw find_or_create_by hashtags
                      text: tweet.text,
                      image: image_url(tweet)
                     )

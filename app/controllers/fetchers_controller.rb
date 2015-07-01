@@ -1,6 +1,7 @@
 class FetchersController < ApplicationController
   before_action :set_fetcher, only: [:show, :edit, :update, :destroy]
   before_action :username
+  before_action :load_user
   before_action :tweets
   before_action :create_presenter
   helper_method :hashtags
@@ -14,7 +15,8 @@ class FetchersController < ApplicationController
   end
 
   def about
-    @about_tweets = AboutPresenter.new(@tweets).about_tweets(params[:hashtag])
+    render :status => 404 unless @user.about_tweets?
+    @about_tweets = @user.about_tweets
   end
 
   def contact
@@ -75,6 +77,10 @@ class FetchersController < ApplicationController
 
     def username
       @username = params[:id]
+    end
+
+    def load_user
+      @user = User.new(params[:id])
     end
 
     def set_fetcher

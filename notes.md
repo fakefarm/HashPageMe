@@ -47,6 +47,28 @@ _don't worry about fields_
 LEt's write a rake task to explore.
 rake tasks help explore an idea rather than build an app
 
+=begin
+
+  blog: https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/48-advanced-modules/lessons/117-included-and-extend
+
+  two: http://ruby-doc.org/core-2.2.2/Module.html
+
+  adding both class and object methods.
+  this way would let you add both with 'include'
+  rather than added include FOO and extend FOO::ClassMethods
+
+
+    Person.find() # class context
+    person.addresses.find(:blah) # object context
+
+  module ClassMethods
+  end
+
+  def included(klass)
+    klass.extend(TweetParser::ClassMethods)
+  end
+=end
+
 
 ## features
 print param we pass in.
@@ -117,8 +139,6 @@ how to generate the website based on content of tweets
 #### 4. generate page
 
 
-
-
 ## HOMEWORK - DB MODEL
 - timestamps, id, blob, textarea 65k - tweets
 
@@ -136,3 +156,14 @@ Don’t make changes until the build passes. May need to comment out some tests.
 
 Focus on the deepest test possible first (not a view or controller, but more of a service, or model, or any library)
 
+
+# Tom Copeland
+
+5/11
+
+ Why to use attr_reader :tweets?
+ Could also have a private method called tweets to further manipulate b/c now I have a hook to get into.
+ Example;
+ def tweets
+   @tweets.reverse
+ end

@@ -1,6 +1,5 @@
 class TwitterImporter
-
-# _dw write tests!
+# _tom How would I write tests for this?
 
   attr_reader :tweet
 
@@ -9,13 +8,13 @@ class TwitterImporter
   end
 
   def import!
-  RawTweet.create( tweet_id: tweet.id,
-                   user_id: tweet.user.id,
-                   username: tweet.user.screen_name,
-                   hashtags: hashtags(tweet), # _dw Should we do a HashTagImporter?
-                   text: tweet.text,
-                   image: image_url(tweet)
-                  )
+    RawTweet.create( tweet_id: tweet.id,
+                     user_id: tweet.user.id,
+                     username: tweet.user.screen_name,
+                     hashtags: hashtags(tweet),
+                     text: tweet.text,
+                     image: image_url(tweet)
+                    )
   end
 
   def hashtags(t)

@@ -4,7 +4,7 @@ namespace :twitter do
     client  = TwitterClientWrapper.new
     tweets  = client.get_all_tweets(args[:username])
     old_tweets = RawTweet.where(username: args[:username])
-    old_tweets.destroy_all # _dw JON, is this cool?
+    old_tweets.destroy_all # _jon, is this cool?
 
     tweets.each do |t|
       TwitterImporter.new(t).import!

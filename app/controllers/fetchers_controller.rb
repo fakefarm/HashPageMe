@@ -9,12 +9,12 @@ class FetchersController < ApplicationController
   include TwitterUtilities
 
   def index
-    render ThemeService.get_template(@theme, 'index'), layout: @layout
+    render Theme.get_template(@theme, 'index'), layout: @layout
   end
 
   def show
     @custom_tweets = CustomTweetsPresenter.new(@tweets).custom_tweets(params[:hashtag])
-    render ThemeService.get_template(@theme, 'show'), layout: @layout
+    render Theme.get_template(@theme, 'show'), layout: @layout
   end
 
   def about
@@ -73,7 +73,7 @@ class FetchersController < ApplicationController
     def set_layout
       @theme_selected = '' # _dw put a a scope here.
       @tweets_for_theme = '' # _dw put a a scope here.
-      @layout = ThemeService.get_layout(@theme_selected)
+      @layout = Theme.get_layout(@theme_selected)
     end
 
     def create_presenter

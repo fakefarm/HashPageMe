@@ -1,4 +1,4 @@
-class ThemeService
+class Theme
   THEMES = %w(default advanced another more)
   DEFAULT = 'default'
 

@@ -30,6 +30,14 @@ about:
   text: 'I love tacos!'
   image: ''
 
+aboutme:
+  tweet_id: 126
+  user_id: 456
+  username: 'alice'
+  hashtags: 'aboutme'
+  text: 'I love tacos!'
+  image: ''
+
 contact:
   tweet_id: 126
   user_id: 456

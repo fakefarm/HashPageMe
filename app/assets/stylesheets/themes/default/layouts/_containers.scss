@@ -1,5 +1,6 @@
 .l-container {
-  @include outer-container;
+  @include row;
+  padding: 1em;
 
 }
 

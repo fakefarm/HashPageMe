@@ -1,5 +1,6 @@
-require 'simplecov'
-SimpleCov.start 'rails'
+# _tom, can we talk about simple cov and how you use it?
+# require 'simplecov'
+# SimpleCov.start 'rails'
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -7,7 +8,6 @@ require 'rails/test_help'
 require 'minitest/rails'
 require 'minitest/rails/capybara'
 require 'minitest/pride'
-require 'vcr_helper'
 require 'pry'
 
 class ActiveSupport::TestCase

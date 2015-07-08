@@ -1,0 +1,10 @@
+<div class="items">
+  <% @presenter.lastest_tweet_per_hashtag.each do |h| %>
+    <div class="item">
+      <%= link_to "/#{@username}/#{CustomTweetsPresenter.hashtags(h.hashtags)}" do %>
+      <div class='tweet-image'><%= image_tag h.image if h.image.present? %></div>
+      <div class='hashtag'><%= CustomTweetsPresenter.hashtags(h.hashtags) %></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

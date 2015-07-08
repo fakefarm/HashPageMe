@@ -5,20 +5,22 @@ class CustomTweetsPresenter < BasePresenter
     tweet.split(',')[1]
   end
 
+
+
   def initialize(tweets)
     @tweets = tweets
   end
 
   def custom_tweets(tag='')
     # _dw - this regex needs work!
-    # Tom
+    # _tom
     tw = tweets.select do |t|
       t.hashtags =~ /h,/ || t.hashtags =~ /b/ #b is temporary since it was my old test for 'banner'
     end
     tw.select { |t| t.hashtags.include?(tag) }
   end
 
-  def tweets_on_index_page
+  def lastest_tweet_per_hashtag
     all = hashtags.map do |h|
       RawTweet.hash_tags_newest_tweets(h)
     end

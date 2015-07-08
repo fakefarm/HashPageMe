@@ -1,5 +1,4 @@
 class TwitterImporter
-# _tom How would I write tests for this?
 
   attr_reader :tweet
 
@@ -16,6 +15,8 @@ class TwitterImporter
                      image: image_url(tweet)
                     )
   end
+
+private
 
   def hashtags(t)
     tags = t.hashtags.map { |h| h.attrs[:text] }.join(",")

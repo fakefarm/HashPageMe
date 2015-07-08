@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render partial: 'shared/head' %>
+  <%= stylesheet_link_tag    'globals', media: 'all' %>
+  <%= stylesheet_link_tag    'themes/default/application', media: 'all' %>
+</head>
+  <body>
+    <h1>@<%= @username %>'s hashtags</h1>
+    <div class="l-container">
+      <div class="l-wrapper">
+        <div class="l-content">
+            <h1>DEFAULT LAYOUT!!</h1>
+            <%= yield %>
+        </div>
+      </div>
+    </div>
+
+<%= render partial: 'shared/google_analytics' %>
+</body>
+</html>

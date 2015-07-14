@@ -8,13 +8,29 @@ class FetchersController < ApplicationController
   helper_method :hashtags
   include TwitterUtilities
 
+  # before_actions should be used for
+  # ensure logged in
+  # if this before_filter fails i'll redirect..
+  # These are environment setup activities
+  # But loading up things that the action / template will use.
+  # use a memoizing method @layout ||= Theme...
+  # with before_filter might pass but it doesn't get to the action so it's somewhat irrelevant
+  # but with momoized methods, i've gotten to the action i want.
+  # before_filters have these only and except blocks
+
   def index
-    render Theme.get_template(@theme, 'index'), layout: @layout
+    @presenter = CustomTweetsPresenter.new(@tweets)
+    render Theme.get_template(@theme, 'index'), layout: the_layout
+    # _dw write functional tests
   end
 
   def show
     @custom_tweets = CustomTweetsPresenter.new(@tweets).custom_tweets(params[:hashtag])
-    render Theme.get_template(@theme, 'show'), layout: @layout
+    render_custom_theme
+  end
+
+  def render_custom_theme
+    render Theme.get_template(@theme, request.action), layout: the_layout
   end
 
   def about
@@ -71,9 +87,14 @@ class FetchersController < ApplicationController
   private
 
     def set_layout
-      @theme_selected = '' # _dw put a a scope here.
-      @tweets_for_theme = '' # _dw put a a scope here.
+      @theme_selected = 'marty' # _dw put a a scope here.
+      # @tweets_for_theme = tweets
       @layout = Theme.get_layout(@theme_selected)
+    end
+
+    def the_layout
+      @theme_selected = 'marty' # _dw put a a scope here.
+      @layout ||= Theme.get_layout(@theme_selected)
     end
 
     def create_presenter

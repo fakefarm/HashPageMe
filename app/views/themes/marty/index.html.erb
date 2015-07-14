@@ -1,0 +1,7 @@
+<div class="grid">
+  <% @presenter.custom_tweets.each do |t| %>
+      <div class="grid-item"><%= image_tag t.image if t.image.present? %></div>
+  <% end %>
+</div>
+
+

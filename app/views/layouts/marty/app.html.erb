@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render partial: 'shared/head' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag    'themes/marty/application', media: 'all' %>
+</head>
+  <body>
+    <%= yield %>
+    <%= render partial: 'shared/google_analytics' %>
+</body>
+</html>

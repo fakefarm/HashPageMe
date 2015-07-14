@@ -1,7 +1,6 @@
 .l-container {
   @include row;
   padding: 1em;
-
 }
 
 .l-sidebar {
@@ -12,8 +11,7 @@
 
 .l-content {
   @include media($medium-screen) {
-    @include span-columns(9);
-    margin-top: 10em;
+    padding-left: 1em;
   }
 }
 

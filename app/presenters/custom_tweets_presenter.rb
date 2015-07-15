@@ -17,7 +17,7 @@ class CustomTweetsPresenter < BasePresenter
     tw = tweets.select do |t|
       t.hashtags =~ /h,/ || t.hashtags =~ /b/ #b is temporary since it was my old test for 'banner'
     end
-    tw.select { |t| t.hashtags.include?(tag) }
+    tw.select { |t| t.hashtags.include?(tag) }.shuffle
   end
 
   def lastest_tweet_per_hashtag

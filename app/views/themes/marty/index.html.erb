@@ -1,7 +1,8 @@
 <div class="l-content tweet-grid">
   <% @presenter.custom_tweets.each do |t| %>
-    <div class="tweet"><%= image_tag t.image if t.image.present? %></div>
+    <% if t.image.present? %>
+      <div class="tweet"><%= link_to (image_tag t.image), t.image, class: 'nerdbox' %></div>
+    <% end %>
   <% end %>
 </div>
-
 

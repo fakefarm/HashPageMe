@@ -26,11 +26,7 @@ class FetchersController < ApplicationController
 
   def show
     @custom_tweets = CustomTweetsPresenter.new(@tweets).custom_tweets(params[:hashtag])
-    render_custom_theme
-  end
-
-  def render_custom_theme
-    render Theme.get_template(@theme, request.action), layout: the_layout
+    render Theme.get_template(@theme, 'show'), layout: the_layout
   end
 
   def about

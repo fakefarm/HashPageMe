@@ -7,7 +7,6 @@ class User
   end
 
   def about_tweets?
-    # _dw HOMEWORK WRITE UNIT TESTS
     about_tweets.present?
   end
 

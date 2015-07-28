@@ -3,10 +3,14 @@ Mentoring:
 
 
 styling:
- ☐ neutral DOM for styling
+ ✔ neutral DOM for styling - NO @done (15-07-28 06:41)
+ ✔ question - how to pick tweets based on scope query named after the theme. @done (15-07-28 06:41)
 
 
  Custom tweets:
  ☐ youtube condition to show it in the show page.
 
 
+random:
+  ☐ talk with Jon about Rack
+  ☐ talk with Tom about Rack

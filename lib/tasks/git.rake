@@ -1,3 +1,5 @@
+# _dw move this into a gem.
+
 require 'yaml'
 toc = YAML.load_file("gittoc.yml")
 

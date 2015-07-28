@@ -26,10 +26,8 @@ class TwitterImporterTest < ActiveSupport::TestCase
   private
 
   def sample_tweet(options={})
-    # HOMEWORK
+    # _dw HOMEWORK
     # openstruct
-
     # t = Twitter::Tweet.new({id: 123}.merge(options))
-    # t.user =
   end
 end

@@ -1,7 +1,0 @@
-<div class='tweet'>
-  <% if tweet.media? %>
-  <%= image_tag "http://pbs.twimg.com#{tweet.media.first.media_url.path}" %>
-  <% end %>
-  <p><%= tweet.text %></p>
-</div>
-

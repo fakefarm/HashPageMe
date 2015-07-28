@@ -14,13 +14,3 @@ namespace :test do
 end
 
 Rake::Task['test:run'].enhance ["test:services", "test:features"]
-
-
-## NOTES
-# namespace :hp do
-#   desc 'this is a test'
-#   task :my_task do
-#     puts 'got here!'
-#   end
-# end
-

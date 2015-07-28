@@ -1,3 +1,4 @@
+# _dw write tests
 class TwitterImporter
 
   attr_reader :tweet
@@ -10,7 +11,7 @@ class TwitterImporter
     RawTweet.create( tweet_id: tweet.id,
                      user_id: tweet.user.id,
                      username: tweet.user.screen_name,
-                     hashtags: hashtags(tweet), # HOMEWORK _dw find_or_create_by hashtags
+                     hashtags: hashtags(tweet), # _dw _JON use the find_or_create_by hashtags and create a table.
                      text: tweet.text,
                      image: image_url(tweet)
                     )

@@ -1,3 +1,52 @@
+# TOM 2015-07-27
+
+## Comments about config/initializers/twitter.rb
+when working with external services, have a single class that wraps the few methods
+separating into multiple files is probably over complicating it.
+
+## On hitting a private method
+TwitterClientWrapper does not have access to Twitter::REST::Client's private methods. (#collect_with_max_id)
+Private method error is a red flag that i'm out of bounds.
+When i hit a private method, i should wonder if i'm too 'deep' and look for a public api method.
+this gem should provide some public methods, like 'get user tweets'
+
+## before_actions use
+before_actions should be used for things like ensure logged in. So, if this before_filter fails i'll redirect. Before_filters are environment setup activities
+
+But loading up things that the action / template will use.
+Because you can memoizing method @layout ||= Theme...
+
+with before_filter might pass but it doesn't get to the action so it's somewhat irrelevant. But with momoized methods, i've gotten to the action i want. before_filters have these only and except blocks
+
+
+
+# Jon D. 2015-07-09
+
+## Example rake task
+
+    namespace :hp do
+      desc 'this is a test'
+      task :my_task do
+        puts 'got here!'
+      end
+    end
+
+
+## PREFER OBJECTS OVER STRING
+code smell if you're passing in a string over passing an object.
+example:  Foo.user('dave')
+it's okay if it's string parsing kind of work
+but if it's not, better to pass a user object.
+
+## Exceptions
+should occur when something happens that means that the rest of this processing
+from here on out can't go on.
+example
+user_profile(user)
+if username doesn't exist - Exception: record not found. (AR::RecordNotFound)
+working with exteral services - you will encounter an exception.
+
+
 # Jon D. 2015-07-01
 
 # HOMEWORK

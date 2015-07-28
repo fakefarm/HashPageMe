@@ -1,8 +1,23 @@
 <div class="l-content tweet-grid">
-  <% @presenter.custom_tweets.each do |t| %>
+  <% @presenter.tweets.each do |t| %>
     <% if t.image.present? %>
       <div class="tweet"><%= link_to (image_tag t.image), t.image, class: 'nerdbox' %></div>
     <% end %>
+
+    <!-- <div class="modal">
+      <label for="modal-1">
+        <div class="modal-trigger"><%= image_tag t.image %></div>
+      </label>
+      <input class="modal-state" id="modal-1" type="checkbox" />
+      <div class="modal-fade-screen">
+        <div class="modal-inner">
+          <div class="modal-close" for="modal-1"></div>
+          <p class="modal-intro"><%= t.text %></p>
+        </div>
+      </div>
+    </div>
+ -->
   <% end %>
 </div>
+
 
